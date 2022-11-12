@@ -38,9 +38,13 @@ $xxl: 1268px;
 
 @mixin content-center {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@mixin content-center-column {
+    @include content-center();
+    flex-direction: column;
 }
 
 @mixin margin {
