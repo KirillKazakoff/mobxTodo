@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function RegistrationRoute() {
     return (
-        <section className='main main-auth'>
-            <header className='header header-auth'>
+        <section className='page page-auth'>
+            <header className='header-auth'>
                 <img
-                    className='img img-done--sm' src='./img/done.png'
+                    className='img img-done img-done--sm'
+                    src='./img/done.png'
                     alt='done-img'
                 />
             </header>
@@ -52,15 +54,15 @@ export default function RegistrationRoute() {
 
             <footer className='footer framed'>
                 <button type='button' className='btn btn-next-section'>
-                    Get Start
+                    <Link to='/todos'>Register</Link>
                 </button>
                 <div className='footer__sign-in-container'>
                     <span className='footer__sign-in-desc'>
                         Already have an account ?
                     </span>
-                    <a href='/#' className='footer__sign-in-link'>
+                    <Link to='/login' className='footer__sign-in-link'>
                         Sign In
-                    </a>
+                    </Link>
                 </div>
             </footer>
         </section>

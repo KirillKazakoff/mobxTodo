@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function MainRoute() {
+export default function TodosRoute() {
     return (
-        <section className='main main-app'>
-            <header className='header header-app framed'>
+        <section className='page page-app'>
+            <header className='header-app framed'>
                 <div className='title-container'>
                     <span className='title title-name text--block'>Monica Belucci</span>
                     <span className='title title-email title--sm'>@monicabelucci</span>

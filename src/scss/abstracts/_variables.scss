@@ -9,13 +9,13 @@ $xxl: 1268px;
     }
 }
 
-@mixin lg {
-    @media (min-width: #{$lg}) {
+@mixin md {
+    @media (min-width: #{$md}) {
         @content;
     }
 }
-@mixin md {
-    @media (min-width: #{$md}) {
+@mixin lg {
+    @media (min-width: #{$lg}) {
         @content;
     }
 }
@@ -71,9 +71,7 @@ $xxl: 1268px;
     --yellow-lighter: #f8d6a9;
     --main-gradient: linear-gradient(267.72deg, #d8605b -0.89%, #f4c27f 112.29%);
 
-    //timings
-    --cat-animation-duration: 1.5s;
-    --greeting-show-duration: 1s;
+    --block-max-width: 470px;
 
     // paddings
     --main-padding: 30px;

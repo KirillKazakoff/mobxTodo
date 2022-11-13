@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function LoginRoute() {
     return (
-        <section className='main main-auth'>
-            <header className='header header-auth'>
+        <section className='page page-auth'>
+            <header className='header-auth'>
                 <img
                     className='img img-done img-done--sm'
                     src='./img/done.png'
