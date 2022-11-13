@@ -4,18 +4,23 @@ import { Link } from 'react-router-dom';
 export default function RegistrationRoute() {
     return (
         <section className='page page-auth'>
-            <header className='header-auth'>
+            <header className='header header-auth'>
                 <img
                     className='img img-done img-done--sm'
                     src='./img/done.png'
                     alt='done-img'
                 />
             </header>
-            <main className='content'>
+            <main className='content content-auth'>
                 <div className='text-container framed'>
                     <div className='title-container'>
-                        <span className='title'>{"Get's things done with"}</span>
-                        <span className='title title-todo text--uppercase'>todo</span>
+                        <span className='title title--lg'>{"Get's things done"}</span>
+                        <div className='text-container'>
+                            <span className='title title--lg'>with</span>
+                            <span className='title title-todo title--lg text--uppercase'>
+                                todo
+                            </span>
+                        </div>
                     </div>
                 </div>
                 <form className='form form-auth framed'>
@@ -23,28 +28,28 @@ export default function RegistrationRoute() {
                         <li className='form__control'>
                             <input
                                 type='text'
-                                className='input'
+                                className='input-text'
                                 placeholder='Enter your name'
                             />
                         </li>
                         <li className='form__control'>
                             <input
                                 type='text'
-                                className='input'
+                                className='input-text'
                                 placeholder='Enter your name'
                             />
                         </li>
                         <li className='form__control'>
                             <input
                                 type='text'
-                                className='input'
+                                className='input-text'
                                 placeholder='Enter your name'
                             />
                         </li>
                         <li className='form__control'>
                             <input
                                 type='text'
-                                className='input'
+                                className='input-text'
                                 placeholder='Enter your name'
                             />
                         </li>

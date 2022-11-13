@@ -1,5 +1,5 @@
 $md: 568px;
-$lg: 790px;
+$lg: 768px;
 $xl: 1100px;
 $xxl: 1268px;
 
@@ -71,20 +71,20 @@ $xxl: 1268px;
     --yellow-lighter: #f8d6a9;
     --main-gradient: linear-gradient(267.72deg, #d8605b -0.89%, #f4c27f 112.29%);
 
-    --block-max-width: 470px;
+    --block-max-width: 500px;
 
-    // paddings
+    // // paddings
     --main-padding: 30px;
-    @include md {
-        --main-padding: 50px;
-    }
-    @include lg {
-        --main-padding: 80px;
-    }
-    @include xl {
-        --main-padding: 150px;
-    }
-    @include xxl {
-        --main-padding: 250px;
-    }
+    // @include md {
+    //     --main-padding: 50px;
+    // }
+    // @include lg {
+    //     --main-padding: 80px;
+    // }
+    // @include xl {
+    //     --main-padding: 150px;
+    // }
+    // @include xxl {
+    //     --main-padding: 250px;
+    // }
 }

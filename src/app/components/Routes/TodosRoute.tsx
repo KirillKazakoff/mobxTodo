@@ -3,9 +3,11 @@ import React from 'react';
 export default function TodosRoute() {
     return (
         <section className='page page-app'>
-            <header className='header-app framed'>
+            <header className='header header-app framed'>
                 <div className='title-container'>
-                    <span className='title title-name text--block'>Monica Belucci</span>
+                    <span className='title title-name title--lg text--block'>
+                        Monica Belucci
+                    </span>
                     <span className='title title-email title--sm'>@monicabelucci</span>
                 </div>
                 <button type='button' className='btn btn-logout'>

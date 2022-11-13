@@ -1,6 +1,6 @@
 // commons
 body {
-    background-color: var(--main);
+    background-color: var(--red);
     font-family: 'Jura';
     color: var(--black);
     font-weight: 300;
@@ -9,6 +9,99 @@ body {
 .framed {
     padding-right: var(--main-padding);
     padding-left: var(--main-padding);
+}
+
+// page
+.page {
+    height: 100vh;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    @include content-center-column();
+
+    &-welcome,
+    &-auth {
+        background-color: var(--yellow-lighter);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @include md {
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+    }
+    &-app {
+        background-color: #fff;
+    }
+    @media (max-height: 820px) and (min-width: 568px) {
+        min-height: 100vh;
+        height: fit-content;
+    }
+}
+
+// header
+.header {
+    width: 100%;
+
+    &-welcome,
+    &-auth {
+        max-width: var(--block-max-width);
+        margin-top: auto;
+        @include md {
+            margin-top: 0;
+        }
+    }
+    &-app {
+        @include content-center-column();
+        min-height: 30vh;
+
+        background-color: var(--yellow-lighter);
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+// .content
+.content {
+    width: 100%;
+    &-welcome,
+    &-auth {
+        max-width: var(--block-max-width);
+    }
+    &-app {
+        @include content-center-column();
+        margin-bottom: 35px;
+        flex: 1;
+        @include md {
+            width: 80%;
+        }
+    }
+}
+
+// footer
+.footer {
+    width: 100%;
+    max-width: var(--block-max-width);
+    margin-top: auto;
+    padding-top: 30px;
+
+    &-welcome {
+        margin-bottom: 60px;
+    }
+    &-app {
+        padding-bottom: 20px;
+    }
+    &__sign-in-container {
+        margin-top: 20px;
+        text-align: center;
+        @include md {
+            font-size: 18px;
+        }
+    }
+    &__sign-in-link {
+        padding-left: 5px;
+        color: var(--red);
+        font-weight: 700;
+    }
 }
 
 .btn {
@@ -22,6 +115,9 @@ body {
         padding: 15px;
         box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
         border-radius: 50px;
+        @include md {
+            font-size: 32px;
+        }
     }
     &-logout {
         background-color: var(--yellow);
@@ -29,9 +125,11 @@ body {
         font-weight: 500;
         font-size: 18px;
         padding: 7px 20px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 30px;
+        margin: 30px auto 0;
+        @include md {
+            font-size: 22px;
+            padding: 10px 30px;
+        }
     }
     &-add {
         @include content-center();
@@ -50,18 +148,27 @@ body {
 .svg {
     &-add {
         width: 15px;
+        @include md {
+            width: 20px;
+        }
     }
     &-remove {
         width: 15px;
+        @include md {
+            width: 20px;
+        }
     }
 }
 
 // text
 .text {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--black-lighter);
-    line-height: 20px;
+    line-height: 30px;
 
+    @include md {
+        font-size: 24px;
+    }
     &-container {
         text-align: center;
     }
@@ -75,16 +182,13 @@ body {
 
 // title
 .title {
-    font-size: 30px;
-    font-weight: 300;
-
+    font-weight: 400;
     &-container {
         text-align: center;
         margin-bottom: 15px;
-    }
-    &--sm {
-        font-size: 20px;
-        font-weight: 500;
+        @include md {
+            margin-bottom: 30px;
+        }
     }
     &-todo {
         padding-left: 5px;
@@ -97,94 +201,49 @@ body {
     }
     &-time {
         font-size: 24px;
-        font-weight: 400;
+        font-weight: 600;
         text-align: center;
         display: block;
         padding-top: 30px;
         padding-bottom: 30px;
+        @include md {
+            font-size: 32px;
+        }
+    }
+    &--sm {
+        font-size: 20px;
+        @include md {
+            font-size: 30px;
+        }
+    }
+    &--lg {
+        font-size: 30px;
+        @include md {
+            font-size: 48px;
+        }
     }
 }
 
 // img-done
 .img-done {
     width: 100%;
-    max-width: 430px;
     padding: 0 5px;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
 
     &--sm {
-        max-width: 60%;
+        max-width: 55%;
+        @include md {
+            max-width: 65%;
+        }
     }
 }
 
-// main
-.page {
-    height: 100vh;
-    @include content-center-column();
-
-    &-welcome,
-    &-auth {
-        background-color: var(--yellow-lighter);
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-    &-app {
-        background-color: #fff;
-    }
-}
-
-// header
-.header {
-    max-width: var(--block-max-width);
-    &-welcome,
-    &-auth {
-        margin-top: auto;
-        align-self: stretch;
-    }
-    &-app {
-        @include content-center-column();
-        width: 100%;
-        min-height: 30vh;
-
-        background-color: var(--yellow-lighter);
-        padding-top: 20px;
-    }
-}
-
-// .content
-.content {
+// input
+.input-text {
     width: 100%;
-    max-width: var(--block-max-width);
-    &-app {
-        @include content-center-column();
-        margin-bottom: 35px;
-        flex: 1;
-    }
-}
-
-// footer
-.footer {
-    width: 100%;
-    max-width: var(--block-max-width);
-    margin-top: auto;
-
-    &-welcome {
-        margin-bottom: 60px;
-    }
-    &-app {
-        padding-bottom: 20px;
-    }
-    &__sign-in-container {
-        margin-top: 20px;
-        text-align: center;
-    }
-    &__sign-in-link {
-        padding-left: 5px;
-        color: var(--red);
-        font-weight: 700;
-    }
+    padding: 15px 30px;
 }
 
 // form
@@ -192,15 +251,25 @@ body {
     &__controls {
         @include flex-column-gap(20px);
         justify-content: space-between;
-        margin-top: 30px;
+        @include md {
+            row-gap: 30px;
+        }
     }
     &__control {
         background-color: white;
-        padding: 15px 30px;
         border-radius: 20px;
+        @include md {
+            font-size: 24px;
+        }
     }
     &__controls-login {
         row-gap: 30px;
+    }
+    &-auth {
+        margin-top: 30px;
+        @include md {
+            margin-top: 50px;
+        }
     }
     &-auth-login {
         margin-top: 70px;
@@ -217,15 +286,18 @@ body {
         border-radius: 24px;
     }
     &-tasks__title {
-        font-size: 30px;
-        font-weight: 700;
+        font-size: 24px;
+        font-weight: 400;
+        @include md {
+            font-size: 24px;
+        }
     }
     &-tasks__header {
         display: flex;
         justify-content: space-between;
     }
     &-tasks__header-desc {
-        font-size: 18px;
+        font-size: 20px;
     }
 }
 
@@ -235,6 +307,12 @@ body {
     min-height: 35vh;
     overflow-y: scroll;
     @include flex-column-gap(15px);
+    @include md {
+        max-height: 40vh;
+        min-height: 40vh;
+        row-gap: 30px;
+        margin-top: 30px;
+    }
 }
 
 .todo {
@@ -244,8 +322,15 @@ body {
     &__checkbox {
         width: 20px;
         height: 20px;
+        @include md {
+            width: 30px;
+            height: 30px;
+        }
     }
     &__desc {
+        @include md {
+            font-size: 18px;
+        }
         max-width: 70%;
     }
 }
