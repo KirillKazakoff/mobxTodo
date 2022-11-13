@@ -18,7 +18,35 @@ export default function TodosRoute() {
             <main className='content content-app framed'>
                 <span className='title title-time'>Good Afternoon !</span>
 
-                <form className='form form-tasks'>
+                <form className='form form-new-task'>
+                    <div className='form-new-task__container'>
+                        <label className='form-new-task__desc'>New task</label>
+                        <div className='form__control form__control-new-task'>
+                            <input
+                                className='input input-text'
+                                placeholder='Enter your new task'
+                            />
+                        </div>
+                        <div className='form__buttons'>
+                            <button type='button' className='btn btn-remove-task'>
+                                <img
+                                    className='svg svg-remove-task svg--scale'
+                                    src='./svg/remove.svg'
+                                    alt='remove-icon'
+                                />
+                            </button>
+                            <button type='button' className='btn btn-agree-task'>
+                                <img
+                                    className='svg svg-agree-task svg--scale'
+                                    src='./svg/tick.svg'
+                                    alt='agree-icon'
+                                />
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <form className='form form-tasks' hidden>
                     <span className='form-tasks__title'>Tasks List</span>
                     <div className='form-tasks__container'>
                         <header className='form-tasks__header'>
@@ -55,7 +83,7 @@ export default function TodosRoute() {
                                     <img
                                         src='./svg/remove.svg'
                                         alt='remove-icon'
-                                        className='svg svg-remove'
+                                        className='svg svg-remove svg--scale'
                                     />
                                 </button>
                             </li>
@@ -68,7 +96,7 @@ export default function TodosRoute() {
                                     <img
                                         src='./svg/remove.svg'
                                         alt='remove-icon'
-                                        className='svg svg-remove'
+                                        className='svg svg-remove svg--scale'
                                     />
                                 </button>
                             </li>
@@ -81,7 +109,7 @@ export default function TodosRoute() {
                                     <img
                                         src='./svg/remove.svg'
                                         alt='remove-icon'
-                                        className='svg svg-remove'
+                                        className='svg svg-remove svg--scale'
                                     />
                                 </button>
                             </li>
@@ -94,7 +122,7 @@ export default function TodosRoute() {
                                     <img
                                         src='./svg/remove.svg'
                                         alt='remove-icon'
-                                        className='svg svg-remove'
+                                        className='svg svg-remove svg--scale'
                                     />
                                 </button>
                             </li>
@@ -107,7 +135,7 @@ export default function TodosRoute() {
                                     <img
                                         src='./svg/remove.svg'
                                         alt='remove-icon'
-                                        className='svg svg-remove'
+                                        className='svg svg-remove svg--scale'
                                     />
                                 </button>
                             </li>
@@ -120,7 +148,7 @@ export default function TodosRoute() {
                                     <img
                                         src='./svg/remove.svg'
                                         alt='remove-icon'
-                                        className='svg svg-remove'
+                                        className='svg svg-remove svg--scale'
                                     />
                                 </button>
                             </li>
@@ -133,7 +161,7 @@ export default function TodosRoute() {
                                     <img
                                         src='./svg/remove.svg'
                                         alt='remove-icon'
-                                        className='svg svg-remove'
+                                        className='svg svg-remove svg--scale'
                                     />
                                 </button>
                             </li>
@@ -146,7 +174,7 @@ export default function TodosRoute() {
                                     <img
                                         src='./svg/remove.svg'
                                         alt='remove-icon'
-                                        className='svg svg-remove'
+                                        className='svg svg-remove svg--scale'
                                     />
                                 </button>
                             </li>
