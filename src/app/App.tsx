@@ -5,15 +5,18 @@ import WelcomeRoute from './components/Routes/WelcomeRoute';
 import RegistrationRoute from './components/Routes/RegistrationRoute';
 import LoginRoute from './components/Routes/LoginRoute';
 import TodosRoute from './components/Routes/TodosRoute';
+import MainRoute from './components/Routes/MainRoute';
 
 export default function App() {
     return (
         <Router>
             <Routes>
-                <Route path='/welcome' element={<WelcomeRoute />} />
-                <Route path='/registration' element={<RegistrationRoute />} />
-                <Route path='/login' element={<LoginRoute />} />
-                <Route path='/todos' element={<TodosRoute />} />
+                <Route path='/' element={<MainRoute />}>
+                    <Route path='/welcome' element={<WelcomeRoute />} />
+                    <Route path='/registration' element={<RegistrationRoute />} />
+                    <Route path='/login' element={<LoginRoute />} />
+                    <Route path='/todos' element={<TodosRoute />} />
+                </Route>
                 <Route path='*' element={<ErrorRoute />} />
             </Routes>
         </Router>

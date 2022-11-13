@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function TodosRoute() {
     return (
@@ -11,7 +12,7 @@ export default function TodosRoute() {
                     <span className='title title-email title--sm'>@monicabelucci</span>
                 </div>
                 <button type='button' className='btn btn-logout'>
-                    Log Out
+                    <Link to='/welcome'>Log Out</Link>
                 </button>
             </header>
             <main className='content content-app framed'>
@@ -22,6 +23,19 @@ export default function TodosRoute() {
                     <div className='form-tasks__container'>
                         <header className='form-tasks__header'>
                             <span className='form-tasks__header-desc'>Add new task</span>
+                            <div className='filtration'>
+                                <span className='filtration__desc'>Filter by:</span>
+                                <div className='filtration__select'>
+                                    <li className='filtration__option filtration__option--selected'>
+                                        All
+                                    </li>
+                                    <ul className='filtration__options'>
+                                        <li className='filtration__option'>All</li>
+                                        <li className='filtration__option'>Done</li>
+                                        <li className='filtration__option'>Undone</li>
+                                    </ul>
+                                </div>
+                            </div>
                             <button type='button' className='btn btn-add'>
                                 <img
                                     src='./svg/plus.svg'
@@ -34,7 +48,8 @@ export default function TodosRoute() {
                             <li className='todo'>
                                 <input className='todo__checkbox' type='checkbox' />
                                 <span className='todo__desc'>
-                                    Cook Rice and Chicken at 10 am
+                                    Cook Rice and Chicken at 10 am Cook Rice and Chicken
+                                    at 10 am
                                 </span>
                                 <button type='button' className='btn btn-remove'>
                                     <img
