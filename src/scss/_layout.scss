@@ -35,7 +35,7 @@ body {
     &-app {
         background-color: #fff;
     }
-    @media (max-height: 820px) and (min-width: 568px) {
+    @media (min-height: 820px) and (min-width: 568px) {
         min-height: 100vh;
         height: fit-content;
     }
@@ -174,15 +174,6 @@ body {
         @include md {
             width: 20px;
         }
-        // --width: 15px;
-        // width: var(--width);
-
-        // &:hover {
-        //     --width: 25px;
-        // }
-        // @include md {
-        //     --width: 20px;
-        // }
     }
     &-remove-task {
         width: 40px;
@@ -292,6 +283,7 @@ body {
         }
     }
     &__control {
+        position: relative;
         background-color: white;
         border-radius: 20px;
         @include md {
