@@ -1,5 +1,6 @@
 import { FormikErrors } from 'formik';
-import user from '../../stores/user';
+import user from '../../stores/user/user';
+import getErrorsDescription from '../Common/Form/validation/getErrorsDescription';
 
 const initialValues = {
     name: '',
@@ -16,28 +17,27 @@ const validate = (values: FormValuesT) => {
     const errors: FormikErrors<FormValuesT> = {};
 
     if (!name) {
-        errors.name = 'Required';
+        errors.name = 'valueMissing';
     }
     if (!mail) {
-        errors.mail = 'Required';
+        errors.mail = 'valueMissing';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.mail)) {
-        errors.mail = 'Invalid email address';
+        errors.mail = 'typeMismatch';
     }
     if (!password) {
-        errors.password = 'Required';
+        errors.password = 'valueMissing';
     }
     if (!checkPassword) {
-        errors.checkPassword = 'Required';
+        errors.checkPassword = 'valueMissing';
     } else if (password !== checkPassword) {
-        errors.checkPassword = "Password doesn't match";
+        errors.checkPassword = 'valueMismatch';
     }
 
-    return errors;
+    return getErrorsDescription(errors);
 };
 
 const onSubmit = (values: FormValuesT) => {
     user.register(values);
-    console.log(user.user.userInfo.personalData.mail);
 };
 
 export default function getRegistrationSettings() {
