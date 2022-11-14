@@ -1,4 +1,5 @@
 import { FormikErrors } from 'formik';
+import user from '../../stores/user';
 
 const initialValues = {
     name: '',
@@ -35,7 +36,8 @@ const validate = (values: FormValuesT) => {
 };
 
 const onSubmit = (values: FormValuesT) => {
-    console.log(values);
+    user.register(values);
+    console.log(user.user.userInfo.personalData.mail);
 };
 
 export default function getRegistrationSettings() {

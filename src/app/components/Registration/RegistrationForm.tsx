@@ -1,9 +1,10 @@
 import { Formik, Form } from 'formik';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import InputText from '../Common/Form/Inputs/InputText';
 import getRegistrationSettings from './registrationModel';
 
-export default function RegistrationForm() {
+const RegistrationForm = observer(() => {
     const { initialValues, validate, onSubmit } = getRegistrationSettings();
 
     return (
@@ -26,10 +27,9 @@ export default function RegistrationForm() {
                         type={'password'}
                     />
                 </ul>
-                <button className='btn btn-next-section' type='submit'>
-                    Submit
-                </button>
             </Form>
         </Formik>
     );
-}
+});
+
+export default RegistrationForm;

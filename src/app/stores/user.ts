@@ -5,11 +5,15 @@ type TodoT = {
     status: 'done' | 'undone';
 };
 
-type UserInfoT = {
-    isRegistred: boolean;
+type PersonDataT = {
     name: string;
     mail: string;
     password: string;
+};
+
+type UserInfoT = {
+    isRegistred: boolean;
+    personalData: PersonDataT;
 };
 
 type UserT = {
@@ -20,9 +24,11 @@ type UserT = {
 const initialUser: UserT = {
     userInfo: {
         isRegistred: false,
-        name: '',
-        mail: '',
-        password: '',
+        personalData: {
+            name: '',
+            mail: '',
+            password: '',
+        },
     },
     todos: [],
 };
@@ -34,8 +40,9 @@ class User {
         makeAutoObservable(this);
     }
 
-    login(userInfo: UserInfoT) {
-        this.user.userInfo = userInfo;
+    register(personalData: PersonDataT) {
+        this.user.userInfo.personalData = personalData;
+        this.user.userInfo.isRegistred = true;
     }
 }
 
