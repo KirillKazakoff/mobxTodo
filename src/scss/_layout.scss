@@ -224,6 +224,9 @@ body {
         color: var(--red);
     }
     &-name {
+        &::first-letter {
+            text-transform: uppercase;
+        }
         font-weight: 700;
     }
     &-time {

@@ -6,7 +6,7 @@ export const messages: MessagesT = {
     },
     mail: {
         valueMissing: 'Input your email',
-        typeMismatch: 'You typed your email wrong',
+        patternMismatch: 'You typed your email wrong',
         wrongResponse: 'There is no such user',
     },
     password: {

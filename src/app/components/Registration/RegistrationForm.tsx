@@ -2,10 +2,10 @@ import { Formik, Form } from 'formik';
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 import InputText from '../Common/Form/Inputs/InputText';
-import getRegistrationSettings from './registrationModel';
+import useRegistrationSettings from './useRegistrationSettings';
 
 const RegistrationForm = observer(() => {
-    const { initialValues, validate, onSubmit } = getRegistrationSettings();
+    const { initialValues, validate, onSubmit } = useRegistrationSettings();
 
     return (
         <Formik

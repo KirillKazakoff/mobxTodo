@@ -1,12 +1,14 @@
 import { FormikErrors } from 'formik';
-import user from '../../stores/user/user';
+import { useNavigate } from 'react-router-dom';
+import userStore from '../../stores/user/userStore';
 import getErrorsDescription from '../Common/Form/validation/getErrorsDescription';
+import { checkPatternMail } from '../Common/Form/validation/utils';
 
 const initialValues = {
-    name: '',
-    mail: '',
-    password: '',
-    checkPassword: '',
+    name: 'username',
+    mail: 'username@mail.com',
+    password: '123',
+    checkPassword: '123',
 };
 type FormValuesT = typeof initialValues;
 
@@ -21,8 +23,8 @@ const validate = (values: FormValuesT) => {
     }
     if (!mail) {
         errors.mail = 'valueMissing';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.mail)) {
-        errors.mail = 'typeMismatch';
+    } else if (checkPatternMail(mail)) {
+        errors.mail = 'patternMismatch';
     }
     if (!password) {
         errors.password = 'valueMissing';
@@ -36,10 +38,11 @@ const validate = (values: FormValuesT) => {
     return getErrorsDescription(errors);
 };
 
-const onSubmit = (values: FormValuesT) => {
-    user.register(values);
-};
-
-export default function getRegistrationSettings() {
+export default function useRegistrationSettings() {
+    const navigate = useNavigate();
+    const onSubmit = (values: FormValuesT) => {
+        userStore.register(values);
+        navigate('/todos');
+    };
     return { initialValues, validate, onSubmit };
 }

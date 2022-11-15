@@ -15,5 +15,5 @@ const initialUser: UserT = {
 };
 
 export function initUser() {
-    return preloadedState || initialUser;
+    return (preloadedState as UserT) || initialUser;
 }

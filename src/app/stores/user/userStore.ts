@@ -3,7 +3,7 @@ import { PersonDataT } from '../../types/types';
 import { saveToLocalStorage } from '../storeLoaderUtils';
 import { initUser } from './initUser';
 
-class User {
+class UserStore {
     user = initUser();
 
     constructor() {
@@ -15,5 +15,10 @@ class User {
         this.user.userInfo.personalData = personalData;
         this.user.userInfo.isRegistred = true;
     }
+
+    get header() {
+        const { name, mail } = this.user.userInfo.personalData;
+        return { name, mail };
+    }
 }
-export default new User();
+export default new UserStore();

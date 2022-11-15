@@ -1,4 +1,6 @@
-export const saveToLocalStorage = (state: any) => {
+import { UserT } from '../types/types';
+
+export const saveToLocalStorage = (state: UserT) => {
     try {
         localStorage.setItem('state', JSON.stringify(state));
         return true;

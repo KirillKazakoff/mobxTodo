@@ -1,6 +1,6 @@
 import React from 'react';
-import RegistrationForm from '../Registration/RegistrationForm';
 import RegistrationFooter from '../Registration/RegistrationFooter';
+import RegistrationForm from '../Registration/RegistrationForm';
 import RegistrationHeader from '../Registration/RegistrationHeader';
 
 export default function RegistrationRoute() {
