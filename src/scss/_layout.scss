@@ -96,17 +96,19 @@ body {
     &-app {
         padding-bottom: 20px;
     }
-    &__sign-in-container {
+}
+
+.sign-link {
+    padding-left: 5px;
+    color: var(--red);
+    font-weight: 700;
+
+    &__container {
         margin-top: 20px;
         text-align: center;
         @include md {
             font-size: 18px;
         }
-    }
-    &__sign-in-link {
-        padding-left: 5px;
-        color: var(--red);
-        font-weight: 700;
     }
 }
 

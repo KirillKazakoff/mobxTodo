@@ -1,6 +1,6 @@
 import { Field, FieldHookConfig } from 'formik';
 import React from 'react';
-import Feedback from '../Feedback/Feedback';
+import Feedback from './Feedback';
 
 export default function InputText(props: FieldHookConfig<string>) {
     return (

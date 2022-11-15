@@ -1,7 +1,7 @@
 import { Formik, Form } from 'formik';
 import { observer } from 'mobx-react-lite';
 import React from 'react';
-import InputText from '../Common/Form/Inputs/InputText';
+import InputText from '../../Common/Form/components/InputText';
 import useRegistrationSettings from './useRegistrationSettings';
 
 const RegistrationForm = observer(() => {

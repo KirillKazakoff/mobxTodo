@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import userStore from '../../stores/user/userStore';
+import userStore from '../../../stores/user/userStore';
 
 export default function TodosHeader() {
     const { name, mail } = userStore.header;

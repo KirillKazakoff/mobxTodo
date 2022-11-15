@@ -1,8 +1,8 @@
 import { FormikErrors } from 'formik';
 import { useNavigate } from 'react-router-dom';
-import userStore from '../../stores/user/userStore';
-import getErrorsDescription from '../Common/Form/validation/getErrorsDescription';
-import { checkPatternMail } from '../Common/Form/validation/utils';
+import userStore from '../../../../stores/user/userStore';
+import getErrorsDescription from '../../Form/validation/getErrorsDescription';
+import { checkPatternMail } from '../../Form/validation/utils';
 
 const initialValues = {
     name: 'username',

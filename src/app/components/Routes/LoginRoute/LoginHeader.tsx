@@ -1,14 +1,11 @@
 import React from 'react';
+import AuthImg from '../../Common/Auth/AuthImg';
 
 export default function LoginHeader() {
     return (
         <header className='header header-auth'>
-            <img
-                className='img img-done img-done--sm'
-                src='./img/done.png'
-                alt='done-img'
-            />
-            <div className='title-container'>
+            <AuthImg />
+            <div className='title-container framed'>
                 <span className='title title--sm'>Welcome back to</span>
                 <span className='title title--lg text--uppercase text--block'>
                     Our reminder
