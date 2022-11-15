@@ -11,6 +11,11 @@ body {
     padding-left: var(--main-padding);
 }
 
+// filters
+.yellow-filter {
+    filter: var(--bg-main-filter);
+}
+
 // page
 .page {
     height: 100vh;
@@ -294,6 +299,17 @@ body {
         @include md {
             font-size: 24px;
         }
+    }
+    &__response {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 20px;
+        text-align: center;
+        font-size: 20px;
+        margin-top: 20px;
+        background-color: var(--red-lighter);
+        padding: 10px;
     }
     &__controls-login {
         row-gap: 30px;

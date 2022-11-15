@@ -1,24 +1,29 @@
+// import React from 'react';
+import { Form, Formik } from 'formik';
 import React from 'react';
+import InputText from '../../Common/Form/components/InputText';
+import useLogingSettings from './useLoginSettings';
+import FormResponse from '../../Common/Form/components/FormResponse';
 
 export default function LoginForm() {
+    const { initialValues, validate, onSubmit } = useLogingSettings();
+
     return (
-        <form className='form form-auth form-auth-login'>
-            <ul className='form__controls form__controls-login'>
-                <li className='form__control'>
-                    <input
-                        type='mail'
-                        className='input-text'
-                        placeholder='Enter your email'
-                    />
-                </li>
-                <li className='form__control'>
-                    <input
-                        type='password'
-                        className='input-text'
+        <Formik
+            initialValues={initialValues} validate={validate}
+            onSubmit={onSubmit}
+        >
+            <Form className='form form-auth framed' id='login-form'>
+                <ul className='form__controls form__controls-login'>
+                    <InputText name='mail' placeholder='Enter your mail' />
+                    <InputText
+                        name='password'
                         placeholder='Enter your password'
+                        type={'password'}
                     />
-                </li>
-            </ul>
-        </form>
+                </ul>
+                <FormResponse form='login' />
+            </Form>
+        </Formik>
     );
 }

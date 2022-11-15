@@ -57,6 +57,7 @@ $xxl: 1268px;
     --black: #000000;
     --black-lighter: #383838;
     --red: #d8605b;
+    --red-lighter: #d27e7b;
     --yellow: #f4c27f;
     --yellow-lighter: #f8d6a9;
     --main-gradient: linear-gradient(267.72deg, #d8605b -0.89%, #f4c27f 112.29%);
@@ -82,4 +83,7 @@ $xxl: 1268px;
 
     --green-filter: brightness(0) saturate(100%) invert(78%) sepia(52%) saturate(512%)
         hue-rotate(53deg) brightness(95%) contrast(103%);
+
+    --bg-main-filter: brightness(0) saturate(100%) invert(62%) sepia(25%) saturate(3221%)
+        hue-rotate(2deg) brightness(109%) contrast(103%);
 }

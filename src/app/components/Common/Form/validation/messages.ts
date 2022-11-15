@@ -18,4 +18,7 @@ export const messages: MessagesT = {
         valueMissing: 'Confirm your password',
         valueMismatch: "Your field doesn't match with password",
     },
+    login: {
+        loginFailed: 'You have inserted wrong data, check your mail and password',
+    },
 };
