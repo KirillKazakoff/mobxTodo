@@ -5,7 +5,7 @@ import { messages } from '../validation/messages';
 
 type Props = { form: string };
 
-export default function FormResponse({ form }: Props) {
+function FormResponseContainer({ form }: Props) {
     const [msgActive, setMsgActive] = useState(false);
     const { isSubmitting, status } = useFormikContext();
 
@@ -17,9 +17,9 @@ export default function FormResponse({ form }: Props) {
     if (!msgActive) return null;
 
     const onClick = () => setMsgActive(false);
-    // return <span className='form__response'>{messages[form][status]}</span>;
+
     return (
-        <div className='form__response'>
+        <div className='form__response-container'>
             <span className='form__response-desc'>{messages[form][status]}</span>
             <button
                 type='button'
@@ -32,6 +32,14 @@ export default function FormResponse({ form }: Props) {
                     alt='remove-icon'
                 />
             </button>
+        </div>
+    );
+}
+
+export default function FormResponse({ form }: Props) {
+    return (
+        <div className='form__response'>
+            <FormResponseContainer form={form} />
         </div>
     );
 }

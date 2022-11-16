@@ -1,18 +1,29 @@
 // UserT
 export type TodoT = {
+    id: string;
     desc: string;
     status: 'done' | 'undone';
 };
-export type PersonDataT = {
+export type PersonalDataT = {
     name: string;
     mail: string;
     password: string;
 };
-export type UserInfoT = {
-    isRegistred: boolean;
-    personalData: PersonDataT;
-};
+
 export type UserT = {
-    userInfo: UserInfoT;
+    id: string;
+    personalData: PersonalDataT;
     todos: TodoT[];
+};
+
+// LoginT
+export type LoginT = {
+    mail: string;
+    password: string;
+};
+
+// RequestType
+export type RequestObjT = {
+    url?: string;
+    settings?: RequestInit;
 };

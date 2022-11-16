@@ -1,6 +1,7 @@
-import { FormikErrors } from 'formik';
+import { FormikErrors, FormikHelpers } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import userStore from '../../../stores/user/userStore';
+import { OnSubmitT } from '../../../types/typesForm';
 import getErrorsDescription from '../../Common/Form/validation/getErrorsDescription';
 import { checkPatternMail } from '../../Common/Form/validation/utils';
 
@@ -40,9 +41,14 @@ const validate = (values: FormValuesT) => {
 
 export default function useRegistrationSettings() {
     const navigate = useNavigate();
-    const onSubmit = (values: FormValuesT) => {
-        userStore.register(values);
-        navigate('/todos');
+    const onSubmit: OnSubmitT<FormValuesT> = async (values, actions) => {
+        try {
+            await userStore.register(values);
+        } catch (e) {
+            actions.setStatus('registrationFailed');
+            actions.setFieldError('mail', 'valueMissing');
+        }
+        // navigate('/todos');
     };
     return { initialValues, validate, onSubmit };
 }

@@ -1,7 +1,8 @@
 import { makeAutoObservable } from 'mobx';
-import { PersonDataT } from '../../types/types';
 import { saveToLocalStorage } from '../storeLoaderUtils';
 import { initUser } from './initUser';
+import { LoginT, PersonalDataT } from '../../types/types';
+import { fetchRegister } from '../../api/api';
 
 class UserStore {
     user = initUser();
@@ -11,12 +12,13 @@ class UserStore {
         window.addEventListener('beforeunload', () => saveToLocalStorage(this.user));
     }
 
-    register(data: PersonDataT) {
-        this.user.userInfo.personalData = data;
-        this.user.userInfo.isRegistred = true;
+    async register(data: PersonalDataT) {
+        this.user.personalData = data;
+        this.user.id = data.mail;
+        return fetchRegister(this.user);
     }
 
-    login(data: typeof this.loginInfo) {
+    login(data: LoginT) {
         const { mail, password } = this.loginInfo;
 
         if (data.mail === mail && data.password === password) {
@@ -26,13 +28,15 @@ class UserStore {
     }
 
     get header() {
-        const { name, mail } = this.user.userInfo.personalData;
+        const { name, mail } = this.user.personalData;
         return { name, mail };
     }
 
     get loginInfo() {
-        const { mail, password } = this.user.userInfo.personalData;
+        const { mail, password } = this.user.personalData;
         return { mail, password };
     }
 }
-export default new UserStore();
+
+const userStore = new UserStore();
+export default userStore;

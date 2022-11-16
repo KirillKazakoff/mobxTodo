@@ -21,4 +21,7 @@ export const messages: MessagesT = {
     login: {
         loginFailed: 'You have inserted wrong data, check your mail and password',
     },
+    register: {
+        registrationFailed: 'There is a registred user with same mail, try to sign in',
+    },
 };
