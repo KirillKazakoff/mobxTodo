@@ -27,3 +27,6 @@ export type RequestObjT = {
     url?: string;
     settings?: RequestInit;
 };
+
+// Filter
+export type FilterTypeT = 'all' | 'done' | 'undone';

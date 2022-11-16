@@ -18,7 +18,8 @@ export const messages: MessagesT = {
         valueMismatch: "Your field doesn't match with password",
     },
     login: {
-        loginFailed: 'You have inserted wrong data, check your mail and password',
+        loginFailed: 'You have inserted wrong password',
+        notFound: 'There is no such user',
     },
     register: {
         registrationFailed: 'There is a registred user with same mail, try to sign in',

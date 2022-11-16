@@ -1,11 +1,9 @@
 import React from 'react';
-import userStore from '../../../stores/user/userStore';
 import NewTodoForm from './NewTodoForm';
-import TodosForm from './TodosForm';
+import TodosForm from './TodosForm/TodosForm';
 import TodosHeader from './TodosHeader';
 
 export default function TodosRoute() {
-    console.log(userStore.user.personalData.mail);
     return (
         <section className='page page-app'>
             <TodosHeader />

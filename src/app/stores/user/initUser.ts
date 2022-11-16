@@ -9,7 +9,23 @@ const initialUser: UserT = {
         mail: '',
         password: '',
     },
-    todos: [],
+    todos: [
+        {
+            desc: 'Cook Rice and Chicken at 8 am',
+            id: '1',
+            status: 'done',
+        },
+        {
+            desc: 'Cook Rice and Chicken at 9 am',
+            id: '2',
+            status: 'undone',
+        },
+        {
+            desc: 'Cook Rice and Chicken at 10 am',
+            id: '3',
+            status: 'done',
+        },
+    ],
 };
 
 export function initUser() {

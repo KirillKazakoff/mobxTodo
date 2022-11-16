@@ -8,97 +8,49 @@
         "password": "123",
         "checkPassword": "123"
       },
-      "todos": []
-    },
-    {
-      "id": "username2@mail.com",
-      "personalData": {
-        "name": "username",
-        "mail": "username2@mail.com",
-        "password": "123",
-        "checkPassword": "123"
-      },
-      "todos": []
-    },
-    {
-      "id": "username3@mail.com",
-      "personalData": {
-        "name": "username",
-        "mail": "username3@mail.com",
-        "password": "123",
-        "checkPassword": "123"
-      },
-      "todos": []
-    },
-    {
-      "id": "username4@mail.com",
-      "personalData": {
-        "name": "username",
-        "mail": "username4@mail.com",
-        "password": "123",
-        "checkPassword": "123"
-      },
-      "todos": []
-    },
-    {
-      "id": "username5@mail.com",
-      "personalData": {
-        "name": "username",
-        "mail": "username5@mail.com",
-        "password": "123",
-        "checkPassword": "123"
-      },
-      "todos": []
-    },
-    {
-      "id": "username6@mail.com",
-      "personalData": {
-        "name": "username",
-        "mail": "username6@mail.com",
-        "password": "123",
-        "checkPassword": "123"
-      },
-      "todos": []
-    },
-    {
-      "id": "username10@mail.com",
-      "personalData": {
-        "name": "username",
-        "mail": "username10@mail.com",
-        "password": "123",
-        "checkPassword": "123"
-      },
-      "todos": []
-    },
-    {
-      "id": "username11@mail.com",
-      "personalData": {
-        "name": "username11",
-        "mail": "username11@mail.com",
-        "password": "123",
-        "checkPassword": "123"
-      },
-      "todos": []
+      "todos": [
+        {
+          "desc": "Cook Rice and Chicken at 8 am",
+          "id": "1",
+          "status": "done"
+        },
+        {
+          "desc": "Cook Rice and Chicken at 9 am",
+          "id": "2",
+          "status": "undone"
+        },
+        {
+          "desc": "Cook Rice and Chicken at 10 am",
+          "id": "3",
+          "status": "done"
+        }
+      ]
     },
     {
       "id": "username1@mail.com",
       "personalData": {
-        "name": "username1",
+        "name": "username",
         "mail": "username1@mail.com",
         "password": "123",
         "checkPassword": "123"
       },
-      "todos": []
-    },
-    {
-      "id": "username20@mail.com",
-      "personalData": {
-        "name": "username1",
-        "mail": "username20@mail.com",
-        "password": "123",
-        "checkPassword": "123"
-      },
-      "todos": []
+      "todos": [
+        {
+          "desc": "Cook Rice and Chicken at 8 am",
+          "id": "1",
+          "status": "done"
+        },
+        {
+          "desc": "Cook Rice and Chicken at 9 am",
+          "id": "2",
+          "status": "undone"
+        },
+        {
+          "desc": "Cook Rice and Chicken at 10 am",
+          "id": "3",
+          "status": "done"
+        }
+      ]
     }
   ]
 }

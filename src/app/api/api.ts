@@ -13,5 +13,18 @@ export const fetchRegister: FetchRegisterT = async (user) => {
 
 type FetchLoginT = (id: string) => Promise<UserT>;
 export const fetchLogin: FetchLoginT = async (id) => {
-    return request({ url: id });
+    try {
+        return await request({ url: id });
+    } catch (e) {
+        throw new Error('notFound');
+    }
+};
+
+export const fetchDeleteTodo = async (idUser: string, idTodo: string) => {
+    await request({
+        url: `${idUser}/${idTodo}`,
+        settings: {
+            method: 'DELETE',
+        },
+    });
 };

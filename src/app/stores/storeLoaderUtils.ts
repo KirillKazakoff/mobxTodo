@@ -17,7 +17,3 @@ export const loadFromLocalStorage = () => {
         return undefined;
     }
 };
-
-// store.subscribe(() => {
-//     saveToLocalStorage(store.getState());
-// });
