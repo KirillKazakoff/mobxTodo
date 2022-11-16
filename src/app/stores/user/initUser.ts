@@ -32,18 +32,3 @@ export function initUser() {
     return (preloadedState as UserT) || initialUser;
     // return initialUser;
 }
-
-// {
-//     "users": [
-//         {
-//             "id": "username@mail.com",
-//             "personalData": {
-//                 "name": "username",
-//                 "mail": "username@mail.com",
-//                 "password": "123",
-//                 "checkPassword": "123"
-//             },
-//             "todos": []
-//         }
-//     ]
-// }

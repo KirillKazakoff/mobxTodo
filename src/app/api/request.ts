@@ -1,6 +1,6 @@
 import { RequestObjT } from '../types/types';
 
-const baseUrl = 'http://localhost:3000/users';
+const baseUrl = 'http://localhost:9092/users';
 
 export function timeoutMock(timeout: number) {
     return new Promise((resolve) => {
@@ -29,8 +29,7 @@ export const request = async (reqObj?: RequestObjT) => {
         if (resData.error) throw new Error(resData.error);
         return resData;
     } catch (e) {
-        // errors$.next(connectionError);
-        console.log(e);
-        throw new Error(e as string);
+        console.log(e.message);
+        throw new Error(e.message as string);
     }
 };

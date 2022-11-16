@@ -16,7 +16,8 @@ export const fetchLogin: FetchLoginT = async (id) => {
     try {
         return await request({ url: id });
     } catch (e) {
-        throw new Error('notFound');
+        console.log(e.message);
+        throw new Error(e.message);
     }
 };
 

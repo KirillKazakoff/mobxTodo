@@ -22,9 +22,9 @@ class UserStore {
     async login(data: LoginT) {
         const { mail, password } = this.loginInfo;
 
-        if (data.mail === mail && data.password === password) {
-            return true;
-        }
+        // if (data.mail === mail && data.password === password) {
+        //     return true;
+        // }
         const user = await fetchLogin(data.mail);
 
         if (user.personalData.password !== data.password) {
