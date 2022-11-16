@@ -11,3 +11,7 @@ export default function getErrorsDescription(errors: any) {
     );
     return res;
 }
+
+// export function getErrorDesc(field: string, error: string) {
+//     return messages[field][error];
+// }

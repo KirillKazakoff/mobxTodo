@@ -3,15 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import userStore from '../../../stores/user/userStore';
 import getErrorsDescription from '../../Common/Form/validation/getErrorsDescription';
 import { checkPatternMail } from '../../Common/Form/validation/utils';
-import { timeoutMock } from '../../../api/request';
-
-const initialValues = {
-    mail: 'mail@mail.com',
-    password: '123',
-};
-type FormValuesT = typeof initialValues;
 
 export default function useLogingSettings() {
+    const initialValues = userStore.loginInfo;
+    type FormValuesT = typeof initialValues;
     const navigate = useNavigate();
 
     const validate = (values: FormValuesT) => {
@@ -31,14 +26,12 @@ export default function useLogingSettings() {
     };
 
     const onSubmit = async (values: FormValuesT, actions: FormikHelpers<FormValuesT>) => {
-        await timeoutMock(1000);
-        const res = userStore.login(values);
-        if (!res) {
-            actions.setStatus('loginFailed');
-            validate(values);
-            return;
+        try {
+            await userStore.login(values);
+            navigate('/todos');
+        } catch (e) {
+            actions.setStatus(e.message);
         }
-        navigate('/todos');
     };
 
     return {

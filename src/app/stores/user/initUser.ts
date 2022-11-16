@@ -1,8 +1,7 @@
 import { UserT } from '../../types/types';
 import { loadFromLocalStorage } from '../storeLoaderUtils';
 
-// const preloadedState = loadFromLocalStorage();
-// const preloadedState;
+const preloadedState = loadFromLocalStorage();
 const initialUser: UserT = {
     id: '',
     personalData: {
@@ -14,8 +13,8 @@ const initialUser: UserT = {
 };
 
 export function initUser() {
-    // return (preloadedState as UserT) || initialUser;
-    return initialUser;
+    return (preloadedState as UserT) || initialUser;
+    // return initialUser;
 }
 
 // {

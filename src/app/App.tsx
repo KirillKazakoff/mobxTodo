@@ -12,7 +12,7 @@ export default function App() {
         <Router>
             <Routes>
                 <Route path='/' element={<MainRoute />}>
-                    <Route path='/welcome' element={<WelcomeRoute />} />
+                    <Route path='/' element={<WelcomeRoute />} />
 
                     <Route path='/registration' element={<RegistrationRoute />} />
                     <Route path='/login' element={<LoginRoute />} />

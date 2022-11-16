@@ -1,4 +1,4 @@
-import { FormikErrors, FormikHelpers } from 'formik';
+import { FormikErrors } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import userStore from '../../../stores/user/userStore';
 import { OnSubmitT } from '../../../types/typesForm';
@@ -44,11 +44,10 @@ export default function useRegistrationSettings() {
     const onSubmit: OnSubmitT<FormValuesT> = async (values, actions) => {
         try {
             await userStore.register(values);
+            navigate('/todos');
         } catch (e) {
             actions.setStatus('registrationFailed');
-            actions.setFieldError('mail', 'valueMissing');
         }
-        // navigate('/todos');
     };
     return { initialValues, validate, onSubmit };
 }

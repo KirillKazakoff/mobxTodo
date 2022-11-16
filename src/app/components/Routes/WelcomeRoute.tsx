@@ -1,7 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import userStore from '../../stores/user/userStore';
 
 export default function WelcomeRoute() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (userStore.isRegistred) {
+            navigate('/login');
+        }
+    });
+
     return (
         <section className='page page-welcome'>
             <header className='header header-welcome'>

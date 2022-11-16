@@ -14,7 +14,7 @@ function FormResponseContainer({ form }: Props) {
     }, [isSubmitting]);
 
     if (isSubmitting) return <SpinLoader />;
-    if (!msgActive) return null;
+    if (!msgActive || !status) return null;
 
     const onClick = () => setMsgActive(false);
 

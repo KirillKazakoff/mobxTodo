@@ -60,7 +60,7 @@ body {
     }
     &-app {
         @include content-center-column();
-        min-height: 30vh;
+        min-height: 26vh;
 
         background-color: var(--yellow-lighter);
         padding-top: 20px;

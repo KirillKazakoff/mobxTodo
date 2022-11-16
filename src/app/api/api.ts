@@ -1,7 +1,8 @@
 import { UserT } from '../types/types';
 import { request } from './request';
 
-export const fetchRegister = async (user: UserT) => {
+type FetchRegisterT = (user: UserT) => Promise<void>;
+export const fetchRegister: FetchRegisterT = async (user) => {
     return request({
         settings: {
             method: 'POST',
@@ -10,6 +11,7 @@ export const fetchRegister = async (user: UserT) => {
     });
 };
 
-export const fetchLogin = async (id: string) => {
+type FetchLoginT = (id: string) => Promise<UserT>;
+export const fetchLogin: FetchLoginT = async (id) => {
     return request({ url: id });
 };
