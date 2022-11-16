@@ -2,7 +2,7 @@
 export type TodoT = {
     id: string;
     desc: string;
-    status: 'done' | 'undone';
+    isChecked: boolean;
 };
 export type PersonalDataT = {
     name: string;

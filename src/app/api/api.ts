@@ -1,4 +1,4 @@
-import { UserT } from '../types/types';
+import { UserT, TodoT } from '../types/types';
 import { request } from './request';
 
 type FetchRegisterT = (user: UserT) => Promise<void>;
@@ -25,6 +25,16 @@ export const fetchDeleteTodo = async (idUser: string, idTodo: string) => {
         url: `${idUser}/${idTodo}`,
         settings: {
             method: 'DELETE',
+        },
+    });
+};
+
+export const fetchCheckTodo = async (idUser: string, todo: TodoT) => {
+    await request({
+        url: `${idUser}/todos/${todo.id}`,
+        settings: {
+            method: 'PUT',
+            body: JSON.stringify(todo),
         },
     });
 };

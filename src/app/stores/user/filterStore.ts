@@ -16,7 +16,9 @@ class FilterStore {
     get todos() {
         const { todos } = userStore.user;
         if (this.status === 'all') return todos;
-        return todos.filter((todo) => todo.status === this.status);
+        const boolStatus = this.status === 'done';
+
+        return todos.filter((todo) => todo.isChecked === boolStatus);
     }
 }
 

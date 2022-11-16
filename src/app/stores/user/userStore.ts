@@ -1,8 +1,9 @@
+/* eslint-disable class-methods-use-this */
 import { makeAutoObservable } from 'mobx';
 import { saveToLocalStorage } from '../storeLoaderUtils';
 import { initUser } from './initUser';
-import { LoginT, PersonalDataT } from '../../types/types';
-import { fetchRegister, fetchLogin } from '../../api/api';
+import { LoginT, PersonalDataT, TodoT } from '../../types/types';
+import { fetchRegister, fetchLogin, fetchCheckTodo } from '../../api/api';
 
 class UserStore {
     user = initUser();
@@ -32,6 +33,12 @@ class UserStore {
 
         this.user = user;
         return true;
+    }
+
+    async checkTodo(todo: TodoT) {
+        // eslint-disable-next-line no-param-reassign
+        todo.isChecked = !todo.isChecked;
+        await fetchCheckTodo(this.user.id, todo);
     }
 
     get header() {

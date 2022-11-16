@@ -13,17 +13,17 @@ const initialUser: UserT = {
         {
             desc: 'Cook Rice and Chicken at 8 am',
             id: '1',
-            status: 'done',
+            isChecked: true,
         },
         {
             desc: 'Cook Rice and Chicken at 9 am',
             id: '2',
-            status: 'undone',
+            isChecked: false,
         },
         {
             desc: 'Cook Rice and Chicken at 10 am',
             id: '3',
-            status: 'done',
+            isChecked: true,
         },
     ],
 };
