@@ -1,54 +1,42 @@
-# Портфолио
+# Тестовое задание - Todo List (React/Mobx)
 
-> ## Ссылка на сайт: [**GitHubPages**][GitHubPages]
+[![Build status](https://ci.appveyor.com/api/projects/status/9434x2hhpl9ryq4y/branch/master?svg=true)](https://ci.appveyor.com/project/KirillKazakoff/mobxtodo/branch/master)
 
-</br>
+## Задачи
+<hr/>
 
-[![Build status](https://ci.appveyor.com/api/projects/status/n1u5nli4jj7wqkqo?svg=true)](https://ci.appveyor.com/project/KirillKazakoff/portfolio)
+- Реализовать авторизацию (регистрация/логин пользователя)
+- В случае успешной авторизации перенаправление на страницу с заданиями 
+- Получить список дел с сервера при редиректе в компонент TodosRoute
+- Реализовать фильтрацию заданий
+- Реализовать функцию добавления новых заданий
+- При отметке чекбоксов отправлять запросы на сервер и изменять статус заданий
+- В случае успеха необходимо обновить чекбокс
+- Реализовать стилизацию и адаптивную верстку на SASS
 
-## Описание
-Портфолио представляет собой SPA на TypeScript, React, и Redux, в котором собраны мои главные работы. Верстка адаптивная, с применением SCSS и БЭМ-методологии.
-
-</br>
-
-## Особенности
-- Для того, чтобы страница прогружалась плавнее при загрузке, было принято решение использовать LazyLoad. Контент догружается по мере скролла странницы. 
-- Также, чтобы анимация при загрузке прошла плавно, было принято решение добавить обработчик onload на картинку с котом.
-- В портфолио есть возможность смены языка. Она была реализована с помощью Redux: по клику на один из языков он диспатчится в store. В store лежит словарь со всем текстовым контентом. Через селектор, по индексу языка, в компонентах достается нужный словарь.
-
-</br>
-
-## Плагины
-| Plugin          | README                                               |
-| --------------- | ---------------------------------------------------- |
-| React           | [plugins/react/README.md][PlReact]                   |
-| Redux           | [plugins/redux/README.md][PlRedux]                   |
-| Redux-toolkit   | [plugins/redux-toolkit/README.md][PlReduxToolkit]    |
-| TypeScript      | [plugins/typeScript/README.md][PlTypeScript]         |
-| React-router    | [plugins/react-router/README.md][PlReactRouter]      |
-| Webpack         | [plugins/webpack/README.md][PlWebpack]               |
-| React-lazy-load | [plugins/react-lazy-load/README.md][PlReactLazyLoad] |
-
-</br>
+<hr/>
 
 ## Установка
-Если вы хотите запустить приложение, клонируйте репозиторий, а затем установите зависимости:
-
+Если вы хотите запустить приложение, то вам необходимо отдельно клонировать два репозитория: этот (клиентская сторона) и [этот] (серверная).
+После вам нужно установить зависимости в обоих проектах:
 ```sh
 yarn
 ```
-И запустите webpack-dev-server:
-```sh
-yarn start
-```
+Затем:
+- В проекте с бэкэндом запустите "dev" команду для отладки. Иначе используйте команду "start"
+    ```sh
+    yarn dev
+    yarn start
+    ``` 
 
-<!-- Table  -->
- [PlReact]: <https://github.com/facebook/react/blob/main/README.md>
- [PlRedux]: <https://github.com/reduxjs/redux/blob/master/README.md>
- [PlReduxToolkit]: <https://github.com/reduxjs/redux-toolkit#readme>
- [PlTypeScript]: <https://github.com/microsoft/TypeScript/blob/main/README.md>
- [PlReactRouter]: <https://github.com/remix-run/react-router#readme>
- [PlWebpack]: <https://github.com/webpack/webpack/blob/main/README.md>
- [PlReactLazyLoad]: https://github.com/Aljullu/react-lazy-load-image-component/blob/master/README.md
+- В проекте с фронтэндом вам нужно запустить сначала скрипт "build" чтобы webpack собрал проект, а затем использовать команду "start"
+  ```sh
+  yarn build
+  yarn start
+  ```
 
-[GitHubPages]:https://kirillkazakoff.github.io/Portfolio/
+</br>
+
+<!-- Links in text -->
+
+[этот]:https://github.com/KirillKazakoff/MobxTodosBack

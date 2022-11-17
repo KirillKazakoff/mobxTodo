@@ -509,7 +509,7 @@ body {
 }
 
 .error-pic-cache {
-    //here we preload img in cache to show it offline
+    //here we preload img in cache to show it offline in network lost case
     background-image: url('../img/catLoaderOrig.jpeg');
 }
 
