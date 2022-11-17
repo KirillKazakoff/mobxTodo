@@ -1,3 +1,5 @@
+import { FormikHelpers } from 'formik';
+
 // UserT
 export type TodoT = {
     id: string;
@@ -30,3 +32,6 @@ export type RequestObjT = {
 
 // Filter
 export type FilterTypeT = 'all' | 'done' | 'undone';
+
+// OnSubmit
+export type OnSubmitT<T> = (values: T, actions: FormikHelpers<T>) => Promise<void>;

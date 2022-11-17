@@ -1,7 +1,8 @@
 import { FormikErrors } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import userStore from '../../../stores/user/userStore';
-import { OnSubmitT } from '../../../types/typesForm';
+import { OnSubmitT } from '../../../types/types';
+
 import getErrorsDescription from '../../Common/Form/validation/getErrorsDescription';
 import { checkPatternMail } from '../../Common/Form/validation/utils';
 

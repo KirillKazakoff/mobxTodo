@@ -7,7 +7,8 @@ import { fetchRegister, fetchLogin } from '../../api/api';
 const preloadedState = loadFromLocalStorage();
 
 class UserStore {
-    user = (preloadedState as UserT) || initUser();
+    // user = (preloadedState as UserT) || initUser();
+    user = initUser();
 
     constructor() {
         makeAutoObservable(this);

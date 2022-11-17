@@ -1,9 +1,8 @@
 import { FormikErrors } from 'formik';
 import { nanoid } from 'nanoid';
 import getErrorsDescription from '../../../Common/Form/validation/getErrorsDescription';
-import { OnSubmitT } from '../../../../types/typesForm';
 import todosStore from '../../../../stores/user/todosStore';
-import { TodoT } from '../../../../types/types';
+import { OnSubmitT, TodoT } from '../../../../types/types';
 
 const initialValues = {
     newTodo: '',

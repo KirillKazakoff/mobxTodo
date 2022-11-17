@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ErrorRoute from './components/Routes/ErrorRoute/ErrorRoute';
+import Error404Route from './components/Routes/ErrorRoute/Error404Route';
 import WelcomeRoute from './components/Routes/WelcomeRoute';
 import RegistrationRoute from './components/Routes/RegistrationRoute/RegistrationRoute';
 import LoginRoute from './components/Routes/LoginRoute/LoginRoute';
@@ -19,7 +19,7 @@ export default function App() {
                     <Route path='/login' element={<LoginRoute />} />
                     <Route path='/todos' element={<TodosRoute />} />
                 </Route>
-                <Route path='*' element={<ErrorRoute />} />
+                <Route path='*' element={<Error404Route />} />
                 <Route path='/disconnect' element={<ErrorConnectionRoute />} />
             </Routes>
         </Router>
