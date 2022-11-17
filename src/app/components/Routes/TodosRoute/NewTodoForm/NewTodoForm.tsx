@@ -41,6 +41,7 @@ const NewTodoForm = observer(() => {
                                 alt='remove-icon'
                             />
                         </button>
+                        <FormResponse form='newTodoForm' cls='form__response-new-todo' />
                         <button type='submit' className='btn btn-agree-todo'>
                             <img
                                 className='svg svg-agree-todo svg--scale'
@@ -48,7 +49,6 @@ const NewTodoForm = observer(() => {
                                 alt='agree-icon'
                             />
                         </button>
-                        <FormResponse form='newTodoForm' />
                     </div>
                 </div>
             </Form>

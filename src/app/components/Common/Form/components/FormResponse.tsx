@@ -16,6 +16,7 @@ function FormResponseContainer({ form }: Props) {
     if (isSubmitting) return <SpinLoader cls='sk-chase-form' />;
     if (!msgActive || !status) return null;
 
+    // return <SpinLoader cls='sk-chase-form' />;
     const onClick = () => setMsgActive(false);
 
     return (
@@ -36,10 +37,14 @@ function FormResponseContainer({ form }: Props) {
     );
 }
 
-export default function FormResponse({ form }: Props) {
+export default function FormResponse({ form, cls }: Props & { cls?: string }) {
     return (
-        <div className='form__response'>
+        <div className={`form__response ${cls}`}>
             <FormResponseContainer form={form} />
         </div>
     );
 }
+
+FormResponse.defaultProps = {
+    cls: '',
+};

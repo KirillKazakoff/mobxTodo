@@ -8,7 +8,7 @@ import userStore from './userStore';
 class TodosStore {
     status: FilterTypeT = 'all';
 
-    isAddingTodo = false;
+    isAddingTodo = true;
 
     todos = userStore.user.todos;
 
@@ -47,8 +47,7 @@ class TodosStore {
 
     async addTodo(todo: TodoT) {
         await fetchAddTodo(userStore.id, todo);
-        userStore.user.todos.push(todo);
-        // ?
+        this.todos.push(todo);
     }
 }
 

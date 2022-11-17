@@ -331,6 +331,9 @@ body {
         margin-top: 30px;
         min-height: 60px;
     }
+    &__response-new-todo {
+        flex: 1;
+    }
     &__response-container {
         display: flex;
         align-items: center;
