@@ -12,7 +12,7 @@ const Todos = observer(() => {
         await todosStore.deleteTodo(todo);
     };
 
-    const todos = todosStore.todos.map((todo) => {
+    const todos = todosStore.todosFiltered.map((todo) => {
         return (
             <li className='todo' key={todo.id}>
                 <input

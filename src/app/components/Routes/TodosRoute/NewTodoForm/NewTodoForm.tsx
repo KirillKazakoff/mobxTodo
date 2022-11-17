@@ -41,7 +41,7 @@ const NewTodoForm = observer(() => {
                                 alt='remove-icon'
                             />
                         </button>
-                        <button type='button' className='btn btn-agree-todo'>
+                        <button type='submit' className='btn btn-agree-todo'>
                             <img
                                 className='svg svg-agree-todo svg--scale'
                                 src='./svg/tick.svg'

@@ -10,6 +10,8 @@ class TodosStore {
 
     isAddingTodo = false;
 
+    todos = userStore.user.todos;
+
     constructor() {
         makeAutoObservable(this);
     }
@@ -22,12 +24,11 @@ class TodosStore {
         this.status = filter;
     }
 
-    get todos() {
-        const { todos } = userStore.user;
-        if (this.status === 'all') return todos;
+    get todosFiltered() {
+        if (this.status === 'all') return this.todos;
         const boolStatus = this.status === 'done';
 
-        return todos.filter((todo) => todo.isChecked === boolStatus);
+        return this.todos.filter((todo) => todo.isChecked === boolStatus);
     }
 
     async checkTodo(todo: TodoT) {
@@ -38,6 +39,7 @@ class TodosStore {
     async deleteTodo(todo: TodoT) {
         await fetchDeleteTodo(userStore.id, todo.id);
         const indexTodo = this.todos.indexOf(todo);
+
         runInAction(() => {
             this.todos.splice(indexTodo, 1);
         });
@@ -45,7 +47,7 @@ class TodosStore {
 
     async addTodo(todo: TodoT) {
         await fetchAddTodo(userStore.id, todo);
-        this.todos.push(todo);
+        userStore.user.todos.push(todo);
         // ?
     }
 }

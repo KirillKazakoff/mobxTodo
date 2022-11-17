@@ -28,6 +28,7 @@ const onSubmit: OnSubmitT<FormValuesT> = async ({ newTodo }, actions) => {
             isChecked: false,
         };
         await todosStore.addTodo(todo);
+        todosStore.toggleNewTodoForm();
     } catch (e) {
         actions.setStatus(e.message);
     }
