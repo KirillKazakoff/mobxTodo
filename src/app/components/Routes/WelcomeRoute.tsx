@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import userStore from '../../stores/user/userStore';
 
 export default function WelcomeRoute() {
     const navigate = useNavigate();
+    const onClick = () => navigate('/registration');
 
     useEffect(() => {
         if (userStore.isRegistred) {
@@ -35,8 +36,11 @@ export default function WelcomeRoute() {
             </main>
 
             <footer className='footer footer-welcome framed'>
-                <button type='button' className='btn btn-next-section'>
-                    <Link to='/registration'>Get Start</Link>
+                <button
+                    type='button' className='btn btn-next-section'
+                    onClick={onClick}
+                >
+                    Get Start
                 </button>
             </footer>
         </section>

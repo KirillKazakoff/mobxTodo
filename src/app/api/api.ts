@@ -30,12 +30,11 @@ export const fetchDeleteTodo = async (idUser: string, idTodo: string) => {
     });
 };
 
-export const fetchCheckTodo = async (idUser: string, todo: TodoT) => {
+export const fetchCheckTodo = async (idUser: string, idTodo: string) => {
     await request({
-        url: `${idUser}/todos/${todo.id}`,
+        url: `${idUser}/${idTodo}`,
         settings: {
-            method: 'PUT',
-            body: JSON.stringify(todo),
+            method: 'PATCH',
         },
     });
 };
