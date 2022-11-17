@@ -9,7 +9,6 @@ export default function Error({ title, desc, children }: Props) {
             <div className='error-desc'>{desc}</div>
             <div className='error-pic-container'>
                 <div className='error-pic'>
-                    <img src='./img/catLoaderOrig.jpeg' alt='catLoader' />
                     <div className='absolute-loader'>
                         <div className='lds-spinner'>
                             <div />

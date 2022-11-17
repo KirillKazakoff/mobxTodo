@@ -9,7 +9,7 @@ const TodosRoute = observer(() => {
         <section className='page page-app'>
             <TodosHeader />
             <main className='content content-app framed'>
-                <span className='title title-time'>Good Afternoon !</span>
+                <span className='title title-greetings'>Nice to see you !</span>
                 <NewTodoForm />
                 <TodosForm />
             </main>

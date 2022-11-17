@@ -3,10 +3,6 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import pageStatusStore from '../../stores/user/pageStatusStore';
 
-const img = new Image();
-img.src = './img/catLoaderOrig.jpeg';
-img.onload = (e) => console.log(e);
-
 const MainRoute = observer(() => {
     const navigate = useNavigate();
     const { isConnected } = pageStatusStore;
@@ -21,6 +17,7 @@ const MainRoute = observer(() => {
 
     return (
         <div className={className}>
+            <div className='error-pic-cache' />
             <Outlet />
         </div>
     );

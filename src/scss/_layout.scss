@@ -232,7 +232,7 @@ body {
         }
         font-weight: 700;
     }
-    &-time {
+    &-greetings {
         font-size: 24px;
         font-weight: 600;
         text-align: center;
@@ -502,45 +502,39 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    position: relative;
+    align-items: center;
 }
 
-// .error-pic {
-//     flex: 1;
-//     max-width: 300px;
-//     height: 400px;
-
-//     object-position: -160px -60px;;
-//     background-image: url('../img/catLoaderOrig.jpeg');
-//     background-repeat: no-repeat;
-//     background-size: 200%;
-//     background-position: -160px -60px;
-
-//     margin: 50px auto 0 auto;
-//     @include md {
-//         max-width: 600px;
-//         height: 500px;
-//         background-size: 100%;
-//         background-position: 0 0;
-//     }
-// }
+.error-pic-cache {
+    background-image: url('../img/catLoaderOrig.jpeg');
+}
 
 .error-pic {
+    position: relative;
     flex: 1;
     max-width: 300px;
     height: 400px;
 
-    object-position: -160px -60px;
     background-repeat: no-repeat;
     background-size: 200%;
     background-position: -160px -60px;
+    background-image: url('../img/catLoaderOrig.jpeg');
 
     margin: 50px auto 0 auto;
+
     @include md {
-        max-width: 600px;
-        height: 500px;
+        max-width: 500px;
         background-size: 100%;
-        object-position: 0px 0px;
+        background-position: 0 0;
+    }
+}
+
+.absolute-loader {
+    left: 120px;
+    top: 50%;
+    position: absolute;
+    @include md {
+        left: 235px;
     }
 }
 
