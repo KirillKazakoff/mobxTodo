@@ -10,9 +10,9 @@ export default function ErrorRoute() {
     return (
         <Error
             title='404 Error'
-            desc='Something went wrong bruh, you should do something'
+            desc='Something went wrong bruh, you should check url bar'
         >
-            <ErrorBtn onClick={onClick} desc='Вернуться назад' />
+            <ErrorBtn onClick={onClick} desc='Get back' />
         </Error>
     );
 }

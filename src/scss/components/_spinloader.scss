@@ -113,9 +113,10 @@
 }
 
 .absolute-loader {
-    top: 285px;
-    left: 315px;
-    position: absolute;
+    // top: 285px;
+    left: 10px;
+    top: 50%;
+    position: relative;
 }
 
 .subscribe-loader {

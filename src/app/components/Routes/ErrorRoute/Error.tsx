@@ -7,24 +7,28 @@ export default function Error({ title, desc, children }: Props) {
         <div className='error-route'>
             <h2 className='error-title'>{title}</h2>
             <div className='error-desc'>{desc}</div>
-            <div className='error-pic'>
-                <div className='absolute-loader'>
-                    <div className='lds-spinner'>
-                        <div />
-                        <div />
-                        <div />
-                        <div />
-                        <div />
-                        <div />
-                        <div />
-                        <div />
-                        <div />
-                        <div />
-                        <div />
-                        <div />
+            <div className='error-pic-container'>
+                <div className='error-pic'>
+                    <img src='./img/catLoaderOrig.jpeg' alt='catLoader' />
+                    <div className='absolute-loader'>
+                        <div className='lds-spinner'>
+                            <div />
+                            <div />
+                            <div />
+                            <div />
+                            <div />
+                            <div />
+                            <div />
+                            <div />
+                            <div />
+                            <div />
+                            <div />
+                            <div />
+                        </div>
                     </div>
                 </div>
             </div>
+
             {children}
         </div>
     );

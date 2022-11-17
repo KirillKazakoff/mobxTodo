@@ -1,4 +1,5 @@
 import { RequestObjT } from '../types/types';
+import pageStatusStore from '../stores/user/pageStatusStore';
 
 const baseUrl = 'http://localhost:9092/users';
 
@@ -29,7 +30,9 @@ export const request = async (reqObj?: RequestObjT) => {
         if (resData.error) throw new Error(resData.error);
         return resData;
     } catch (e) {
-        console.log(e.message);
+        if (e.message === 'Failed to fetch') {
+            pageStatusStore.setConnectionLost();
+        }
         throw new Error(e.message as string);
     }
 };
