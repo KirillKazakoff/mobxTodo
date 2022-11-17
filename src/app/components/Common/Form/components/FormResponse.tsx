@@ -23,11 +23,11 @@ function FormResponseContainer({ form }: Props) {
             <span className='form__response-desc'>{messages[form][status]}</span>
             <button
                 type='button'
-                className='btn btn-remove-task yellow-filter'
+                className='btn btn-remove-todo yellow-filter'
                 onClick={onClick}
             >
                 <img
-                    className='svg svg-remove-task svg--scale'
+                    className='svg svg-remove-todo svg--scale'
                     src='./svg/remove.svg'
                     alt='remove-icon'
                 />

@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable class-methods-use-this */
 import { makeAutoObservable } from 'mobx';
 import { saveToLocalStorage } from '../storeLoaderUtils';
 import { initUser } from './initUser';
@@ -29,7 +27,7 @@ class UserStore {
         const user = await fetchLogin(data.mail);
 
         if (user.personalData.password !== data.password) {
-            throw new Error('loginFailed');
+            throw new Error('Auth Failed');
         }
 
         this.user = user;
@@ -46,8 +44,8 @@ class UserStore {
         return { mail, password };
     }
 
-    get isRegistred() {
-        return !!this.user.id;
+    get id() {
+        return this.user.id;
     }
 }
 

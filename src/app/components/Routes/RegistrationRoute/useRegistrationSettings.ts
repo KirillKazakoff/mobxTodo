@@ -46,7 +46,7 @@ export default function useRegistrationSettings() {
             await userStore.register(values);
             navigate('/todos');
         } catch (e) {
-            actions.setStatus('registrationFailed');
+            actions.setStatus(e.message);
         }
     };
     return { initialValues, validate, onSubmit };

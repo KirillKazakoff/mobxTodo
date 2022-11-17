@@ -1,15 +1,21 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-param-reassign */
 import { makeAutoObservable, runInAction } from 'mobx';
-import { fetchCheckTodo, fetchDeleteTodo } from '../../api/api';
+import { fetchCheckTodo, fetchDeleteTodo, fetchAddTodo } from '../../api/api';
 import { FilterTypeT, TodoT } from '../../types/types';
 import userStore from './userStore';
 
 class TodosStore {
     status: FilterTypeT = 'all';
 
+    isAddingTodo = false;
+
     constructor() {
         makeAutoObservable(this);
+    }
+
+    toggleNewTodoForm() {
+        this.isAddingTodo = !this.isAddingTodo;
     }
 
     setFilter(filter: FilterTypeT) {
@@ -26,15 +32,21 @@ class TodosStore {
 
     async checkTodo(todo: TodoT) {
         todo.isChecked = !todo.isChecked;
-        await fetchCheckTodo(userStore.user.id, todo.id);
+        await fetchCheckTodo(userStore.id, todo.id);
     }
 
     async deleteTodo(todo: TodoT) {
-        await fetchDeleteTodo(userStore.user.id, todo.id);
+        await fetchDeleteTodo(userStore.id, todo.id);
         const indexTodo = this.todos.indexOf(todo);
         runInAction(() => {
             this.todos.splice(indexTodo, 1);
         });
+    }
+
+    async addTodo(todo: TodoT) {
+        await fetchAddTodo(userStore.id, todo);
+        this.todos.push(todo);
+        // ?
     }
 }
 

@@ -1,9 +1,10 @@
+import { observer } from 'mobx-react-lite';
 import React from 'react';
-import NewTodoForm from './NewTodoForm';
+import NewTodoForm from './NewTodoForm/NewTodoForm';
 import TodosForm from './TodosForm/TodosForm';
 import TodosHeader from './TodosHeader';
 
-export default function TodosRoute() {
+const TodosRoute = observer(() => {
     return (
         <section className='page page-app'>
             <TodosHeader />
@@ -14,4 +15,6 @@ export default function TodosRoute() {
             </main>
         </section>
     );
-}
+});
+
+export default TodosRoute;

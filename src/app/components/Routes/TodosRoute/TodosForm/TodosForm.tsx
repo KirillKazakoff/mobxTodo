@@ -1,21 +1,23 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
-import filterStore from '../../../../stores/user/todosStore';
+import todosStore from '../../../../stores/user/todosStore';
 import Filtration from '../Filtration/Filtration';
 import BtnAddTodo from './BtnAddTodo';
 import Todos from './Todos';
 
 const TodosForm = observer(() => {
+    if (todosStore.isAddingTodo) return null;
+
     return (
-        <form className='form form-tasks'>
-            <span className='form-tasks__title'>Tasks List</span>
-            <div className='form-tasks__container'>
-                <header className='form-tasks__header'>
+        <form className='form form-todos'>
+            <span className='form-todos__title'>Todo List</span>
+            <div className='form-todos__container'>
+                <header className='form-todos__header'>
                     <Filtration />
-                    <span className='form-tasks__header-desc'>Add</span>
+                    <span className='form-todos__header-desc'>Add</span>
                     <BtnAddTodo />
                 </header>
-                <Todos data={filterStore.todos} />
+                <Todos />
             </div>
         </form>
     );

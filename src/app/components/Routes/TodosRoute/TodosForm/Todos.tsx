@@ -4,9 +4,7 @@ import { TodoT } from '../../../../types/types';
 import BtnRemoveTodo from './BtnRemoveTodo';
 import todosStore from '../../../../stores/user/todosStore';
 
-type Props = { data: TodoT[] };
-
-const Todos = observer(({ data }: Props) => {
+const Todos = observer(() => {
     const onChange = (todo: TodoT) => () => {
         todosStore.checkTodo(todo);
     };
@@ -14,7 +12,7 @@ const Todos = observer(({ data }: Props) => {
         await todosStore.deleteTodo(todo);
     };
 
-    const todos = data.map((todo) => {
+    const todos = todosStore.todos.map((todo) => {
         return (
             <li className='todo' key={todo.id}>
                 <input

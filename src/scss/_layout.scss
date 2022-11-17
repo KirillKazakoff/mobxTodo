@@ -162,6 +162,9 @@ body {
         margin-left: auto;
         margin-right: 10px;
     }
+    &-agree-todo {
+        margin-left: auto;
+    }
 }
 
 // svg
@@ -178,10 +181,10 @@ body {
             width: 20px;
         }
     }
-    &-remove-task {
+    &-remove-todo {
         width: 40px;
     }
-    &-agree-task {
+    &-agree-todo {
         filter: var(--green-filter);
         width: 35px;
     }
@@ -236,6 +239,7 @@ body {
         display: block;
         padding-top: 30px;
         padding-bottom: 30px;
+        margin-bottom: auto;
         @include md {
             font-size: 32px;
         }
@@ -288,9 +292,24 @@ body {
     &__control {
         position: relative;
         background-color: white;
+        border: 1px solid transparent;
         border-radius: 20px;
         @include md {
             font-size: 24px;
+        }
+        &:focus-within {
+            border-color: royalblue;
+        }
+    }
+    &__control-new-todo {
+        margin-top: 70px;
+        margin-bottom: 80px;
+        border: 1px solid var(--yellow);
+    }
+    &__control--invalid {
+        border: 1px solid red;
+        &:focus-within {
+            border-color: red;
         }
     }
 
@@ -323,25 +342,25 @@ body {
         background-color: var(--red-lighter);
         padding: 10px;
     }
-    // tasks
-    &-tasks {
+    // form-todos
+    &-todos {
         width: 100%;
         margin-top: auto;
     }
-    &-tasks__container {
+    &-todos__container {
         margin-top: 20px;
         padding: 25px 15px 50px;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
         border-radius: 24px;
     }
-    &-tasks__title {
+    &-todos__title {
         font-size: 24px;
         font-weight: 400;
         @include md {
             font-size: 24px;
         }
     }
-    &-tasks__header {
+    &-todos__header {
         font-size: 18px;
         display: flex;
         align-items: center;
@@ -349,31 +368,27 @@ body {
             font-size: 20px;
         }
     }
-    &-tasks__header-desc {
+    &-todos__header-desc {
         margin-left: auto;
         margin-right: 10px;
         border: 2px solid transparent;
     }
-    // new-task
-    &-new-task {
+    // new-todo
+    &-new-todo {
         width: 100%;
+        margin-bottom: auto;
     }
-    &-new-task__container {
+    &-new-todo__container {
+        min-height: 40vh;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
         border-radius: 24px;
-        margin-top: 50px;
 
         padding: 40px 20px 15px;
         @include md {
             padding: 80px 45px 30px;
         }
     }
-    &__control-new-task {
-        margin-top: 70px;
-        margin-bottom: 80px;
-        border: 1px solid var(--yellow);
-    }
-    &-new-task__desc {
+    &-new-todo__desc {
         font-size: 28px;
         @include md {
             font-size: 32px;

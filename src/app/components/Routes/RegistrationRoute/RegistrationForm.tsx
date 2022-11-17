@@ -15,7 +15,10 @@ const RegistrationForm = observer(() => {
         >
             <Form className='form form-auth framed' id='registration-form'>
                 <ul className='form__controls'>
-                    <InputText name='name' placeholder='Enter your name' />
+                    <InputText
+                        autoFocus name='name'
+                        placeholder='Enter your name'
+                    />
                     <InputText name='mail' placeholder='Enter your mail' />
                     <InputText
                         name='password'

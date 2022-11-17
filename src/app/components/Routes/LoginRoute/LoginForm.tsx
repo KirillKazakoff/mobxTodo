@@ -15,7 +15,10 @@ export default function LoginForm() {
         >
             <Form className='form form-auth framed' id='login-form'>
                 <ul className='form__controls form__controls-login'>
-                    <InputText name='mail' placeholder='Enter your mail' />
+                    <InputText
+                        autoFocus name='mail'
+                        placeholder='Enter your mail'
+                    />
                     <InputText
                         name='password'
                         placeholder='Enter your password'

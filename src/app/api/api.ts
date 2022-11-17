@@ -1,6 +1,7 @@
-import { UserT, TodoT } from '../types/types';
+import { TodoT, UserT } from '../types/types';
 import { request } from './request';
 
+// UserFetches
 type FetchRegisterT = (user: UserT) => Promise<void>;
 export const fetchRegister: FetchRegisterT = async (user) => {
     return request({
@@ -13,15 +14,12 @@ export const fetchRegister: FetchRegisterT = async (user) => {
 
 type FetchLoginT = (id: string) => Promise<UserT>;
 export const fetchLogin: FetchLoginT = async (id) => {
-    try {
-        return await request({ url: id });
-    } catch (e) {
-        console.log(e.message);
-        throw new Error(e.message);
-    }
+    return request({ url: id });
 };
 
-export const fetchDeleteTodo = async (idUser: string, idTodo: string) => {
+// TodoFetches
+type FetchChangeTodoT = (idUser: string, idTodo: string) => Promise<void>;
+export const fetchDeleteTodo: FetchChangeTodoT = async (idUser, idTodo) => {
     await request({
         url: `${idUser}/${idTodo}`,
         settings: {
@@ -30,11 +28,22 @@ export const fetchDeleteTodo = async (idUser: string, idTodo: string) => {
     });
 };
 
-export const fetchCheckTodo = async (idUser: string, idTodo: string) => {
+export const fetchCheckTodo: FetchChangeTodoT = async (idUser, idTodo) => {
     await request({
         url: `${idUser}/${idTodo}`,
         settings: {
             method: 'PATCH',
+        },
+    });
+};
+
+type FetchAddTodoT = (idUser: string, todo: TodoT) => Promise<void>;
+export const fetchAddTodo: FetchAddTodoT = async (idUser, todo) => {
+    await request({
+        url: idUser,
+        settings: {
+            method: 'POST',
+            body: JSON.stringify(todo),
         },
     });
 };

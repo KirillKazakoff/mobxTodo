@@ -18,10 +18,16 @@ export const messages: MessagesT = {
         valueMismatch: "Your field doesn't match with password",
     },
     login: {
-        'loginFailed': 'You have inserted wrong password',
+        'Auth Failed': 'You have inserted wrong password',
         'Not Found': 'There is no such user',
     },
     register: {
-        registrationFailed: 'There is a registred user with same mail, try to sign in',
+        'Bad Request': 'There is a registred user with same mail, try to sign in',
+    },
+    newTodo: {
+        valueMissing: 'Your todo is empty, input something',
+    },
+    newTodoForm: {
+        'Bad Request': "There is a server error, can't add this todo",
     },
 };

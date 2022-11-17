@@ -7,7 +7,7 @@ export default function WelcomeRoute() {
     const onClick = () => navigate('/registration');
 
     useEffect(() => {
-        if (userStore.isRegistred) {
+        if (userStore.id) {
             navigate('/login');
         }
     });
