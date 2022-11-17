@@ -17,7 +17,7 @@ const MainRoute = observer(() => {
 
     return (
         <div className={className}>
-            <div className='error-pic-cache' />
+            <div className='error__pic-cache' />
             <Outlet />
         </div>
     );

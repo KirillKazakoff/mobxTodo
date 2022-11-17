@@ -168,6 +168,25 @@ body {
     &-agree-todo {
         margin-left: auto;
     }
+    /* .btn-back */
+    &-back {
+        width: 300px;
+        font-weight: 700;
+        margin-left: auto;
+        color: var(--black);
+        background: var(--yellow);
+        padding: 15px 20px;
+        font-size: 24px;
+        z-index: 1;
+        margin: 40px auto 0 auto;
+        text-transform: uppercase;
+    }
+
+    &-back:hover {
+        box-shadow: var(--btn-shadow);
+        background-color: var(--red);
+        color: white;
+    }
 }
 
 // svg
@@ -479,8 +498,8 @@ body {
     }
 }
 
-/* error-route */
-.error-route {
+/* error route */
+.error {
     @include content-center-column;
     min-height: 100vh;
     background-color: white;
@@ -488,75 +507,50 @@ body {
 
     margin: auto;
     padding: 15px;
-}
 
-.error-title {
-    font-size: 48px;
-    font-weight: 500;
-}
-
-.error-desc {
-    margin-top: 20px;
-    font-size: 28px;
-}
-
-.error-pic-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.error-pic-cache {
-    //here we preload img in cache to show it offline in network lost case
-    background-image: url('../img/catLoaderOrig.jpeg');
-}
-
-.error-pic {
-    position: relative;
-    flex: 1;
-    max-width: 300px;
-    height: 400px;
-
-    background-repeat: no-repeat;
-    background-size: 200%;
-    background-position: -160px -60px;
-    background-image: url('../img/catLoaderOrig.jpeg');
-
-    margin: 50px auto 0 auto;
-
-    @include md {
-        max-width: 500px;
-        background-size: 100%;
-        background-position: 0 0;
+    &__title {
+        font-size: 48px;
+        font-weight: bolder;
     }
-}
-
-.absolute-loader {
-    left: 120px;
-    top: 50%;
-    position: absolute;
-    @include md {
-        left: 235px;
+    &__desc {
+        margin-top: 20px;
+        font-size: 28px;
     }
-}
+    &__pic-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__pic-cache {
+        //here we preload img in cache to show it offline in network lost case
+        background-image: url('../img/catLoaderOrig.jpeg');
+    }
+    &__pic {
+        position: relative;
+        flex: 1;
+        max-width: 300px;
+        height: 400px;
 
-/* .btn-back */
-.btn-back {
-    width: 300px;
-    font-weight: 700;
-    margin-left: auto;
-    color: var(--black);
-    background: var(--yellow);
-    padding: 15px 20px;
-    font-size: 24px;
-    z-index: 1;
-    margin: 40px auto 0 auto;
-    text-transform: uppercase;
-}
+        background-repeat: no-repeat;
+        background-size: 200%;
+        background-position: -160px -60px;
+        background-image: url('../img/catLoaderOrig.jpeg');
 
-.btn-back:hover {
-    box-shadow: var(--btn-shadow);
-    background-color: var(--red);
-    color: white;
+        margin: 50px auto 0 auto;
+
+        @include md {
+            max-width: 500px;
+            background-size: 100%;
+            background-position: 0 0;
+        }
+    }
+    &__loader {
+        left: 120px;
+        top: 50%;
+        position: absolute;
+        @include md {
+            left: 235px;
+        }
+    }
 }
