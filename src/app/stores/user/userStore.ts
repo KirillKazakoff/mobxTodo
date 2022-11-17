@@ -1,15 +1,10 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable class-methods-use-this */
-import { makeAutoObservable, runInAction } from 'mobx';
+import { makeAutoObservable } from 'mobx';
 import { saveToLocalStorage } from '../storeLoaderUtils';
 import { initUser } from './initUser';
-import { LoginT, PersonalDataT, TodoT } from '../../types/types';
-import {
-    fetchRegister,
-    fetchLogin,
-    fetchCheckTodo,
-    fetchDeleteTodo,
-} from '../../api/api';
+import { LoginT, PersonalDataT } from '../../types/types';
+import { fetchRegister, fetchLogin } from '../../api/api';
 
 class UserStore {
     user = initUser();
@@ -39,19 +34,6 @@ class UserStore {
 
         this.user = user;
         return true;
-    }
-
-    async checkTodo(todo: TodoT) {
-        todo.isChecked = !todo.isChecked;
-        await fetchCheckTodo(this.user.id, todo.id);
-    }
-
-    async deleteTodo(todo: TodoT) {
-        await fetchDeleteTodo(this.user.id, todo.id);
-        const indexTodo = this.user.todos.indexOf(todo);
-        runInAction(() => {
-            this.user.todos.splice(indexTodo, 1);
-        });
     }
 
     get header() {

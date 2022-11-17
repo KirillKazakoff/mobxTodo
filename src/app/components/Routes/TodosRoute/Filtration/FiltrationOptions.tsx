@@ -1,5 +1,5 @@
 import React from 'react';
-import filterStore from '../../../../stores/user/filterStore';
+import filterStore from '../../../../stores/user/todosStore';
 import { FilterTypeT } from '../../../../types/types';
 
 type Props = { setActiveHandler: () => void; isActive: boolean };

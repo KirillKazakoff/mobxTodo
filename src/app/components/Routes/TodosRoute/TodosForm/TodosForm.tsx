@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
-import filterStore from '../../../../stores/user/filterStore';
+import filterStore from '../../../../stores/user/todosStore';
 import Filtration from '../Filtration/Filtration';
 import BtnAddTodo from './BtnAddTodo';
 import Todos from './Todos';

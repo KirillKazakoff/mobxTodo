@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { TodoT } from '../../../../types/types';
-import userStore from '../../../../stores/user/userStore';
 import BtnRemoveTodo from './BtnRemoveTodo';
+import todosStore from '../../../../stores/user/todosStore';
 
 type Props = { data: TodoT[] };
 
 const Todos = observer(({ data }: Props) => {
     const onChange = (todo: TodoT) => () => {
-        userStore.checkTodo(todo);
+        todosStore.checkTodo(todo);
     };
     const onClick = (todo: TodoT) => async () => {
-        await userStore.deleteTodo(todo);
+        await todosStore.deleteTodo(todo);
     };
 
     const todos = data.map((todo) => {

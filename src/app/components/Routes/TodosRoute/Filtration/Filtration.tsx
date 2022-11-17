@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import filterStore from '../../../../stores/user/filterStore';
+import filterStore from '../../../../stores/user/todosStore';
 import FiltrationOptions from './FiltrationOptions';
 
 export default function Filtration() {
