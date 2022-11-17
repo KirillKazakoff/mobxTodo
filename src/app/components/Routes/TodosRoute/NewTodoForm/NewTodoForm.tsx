@@ -2,8 +2,8 @@ import { Formik, Form } from 'formik';
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 import todosStore from '../../../../stores/user/todosStore';
-import FormResponse from '../../../Common/Form/components/FormResponse';
 import InputText from '../../../Common/Form/components/InputText';
+import FormButtons from './FormButtons';
 import getNewTodoFormSettings from './getNewTodoFormSettings';
 
 const NewTodoForm = observer(() => {
@@ -29,27 +29,7 @@ const NewTodoForm = observer(() => {
                             placeholder='Enter your new todo'
                         />
                     </div>
-                    <div className='form__buttons'>
-                        <button
-                            type='button'
-                            className='btn btn-remove-todo'
-                            onClick={onRemove}
-                        >
-                            <img
-                                className='svg svg-remove-todo svg--scale'
-                                src='./svg/remove.svg'
-                                alt='remove-icon'
-                            />
-                        </button>
-                        <FormResponse form='newTodoForm' cls='form__response-new-todo' />
-                        <button type='submit' className='btn btn-agree-todo'>
-                            <img
-                                className='svg svg-agree-todo svg--scale'
-                                src='./svg/tick.svg'
-                                alt='agree-icon'
-                            />
-                        </button>
-                    </div>
+                    <FormButtons onRemove={onRemove} />
                 </div>
             </Form>
         </Formik>

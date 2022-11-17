@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ErrorRoute from './components/Routes/ErrorRoute';
+import ErrorRoute from './components/Routes/ErrorRoute/ErrorRoute';
 import WelcomeRoute from './components/Routes/WelcomeRoute';
 import RegistrationRoute from './components/Routes/RegistrationRoute/RegistrationRoute';
 import LoginRoute from './components/Routes/LoginRoute/LoginRoute';
