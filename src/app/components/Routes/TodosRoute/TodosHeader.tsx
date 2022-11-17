@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import userStore from '../../../stores/user/userStore';
 
 export default function TodosHeader() {
-    const { name, mail } = userStore.header;
+    const { name, mail } = userStore.user.personalData;
     const navigate = useNavigate();
     const onClick = () => navigate('/login');
 

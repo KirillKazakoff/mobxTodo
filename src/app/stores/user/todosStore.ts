@@ -8,9 +8,7 @@ import userStore from './userStore';
 class TodosStore {
     status: FilterTypeT = 'all';
 
-    isAddingTodo = true;
-
-    todos = userStore.user.todos;
+    isAddingTodo = false;
 
     constructor() {
         makeAutoObservable(this);
@@ -22,6 +20,10 @@ class TodosStore {
 
     setFilter(filter: FilterTypeT) {
         this.status = filter;
+    }
+
+    get todos() {
+        return userStore.user.todos;
     }
 
     get todosFiltered() {

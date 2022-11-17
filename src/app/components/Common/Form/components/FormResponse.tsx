@@ -13,10 +13,9 @@ function FormResponseContainer({ form }: Props) {
         if (isSubmitting) setMsgActive(true);
     }, [isSubmitting]);
 
-    // if (isSubmitting) return <SpinLoader cls='sk-chase-form' />;
-    // if (!msgActive || !status) return null;
+    if (isSubmitting) return <SpinLoader cls='sk-chase-form' />;
+    if (!msgActive || !status) return null;
 
-    return <SpinLoader cls='sk-chase-form' />;
     const onClick = () => setMsgActive(false);
 
     return (

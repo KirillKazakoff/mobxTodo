@@ -111,6 +111,9 @@ body {
             font-size: 18px;
         }
     }
+    &:hover {
+        color: royalblue;
+    }
 }
 
 .btn {
@@ -506,6 +509,7 @@ body {
 }
 
 .error-pic-cache {
+    //here we preload img in cache to show it offline
     background-image: url('../img/catLoaderOrig.jpeg');
 }
 
