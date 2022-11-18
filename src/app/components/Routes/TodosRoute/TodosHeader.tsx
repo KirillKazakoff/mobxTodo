@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
 import userStore from '../../../stores/user/userStore';
 
-export default function TodosHeader() {
+const TodosHeader = observer(() => {
     const { name, mail } = userStore.user.personalData;
     const navigate = useNavigate();
     const onClick = () => navigate('/login');
@@ -21,4 +22,6 @@ export default function TodosHeader() {
             </button>
         </header>
     );
-}
+});
+
+export default TodosHeader;

@@ -22,9 +22,9 @@ const TodosRoute = observer(() => {
         navigate('/registration');
     }, [isLoading, navigate]);
 
-    // if (userStore.isLoading) {
-    return <PageLoader cls='page-loader--main' desc='Идет загрузка...' />;
-    // }
+    if (userStore.isLoading) {
+        return <PageLoader cls='page-loader--main' desc='Идет загрузка...' />;
+    }
 
     return (
         <section className='page page-app'>
