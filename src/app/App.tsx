@@ -6,7 +6,7 @@ import RegistrationRoute from './components/Routes/RegistrationRoute/Registratio
 import LoginRoute from './components/Routes/LoginRoute/LoginRoute';
 import TodosRoute from './components/Routes/TodosRoute/TodosRoute';
 import MainRoute from './components/Routes/MainRoute';
-import ErrorConnectionRoute from './components/Routes/ErrorRoute/ErrorConnectionRoute';
+import ErrorNetworkRoute from './components/Routes/ErrorRoute/ErrorNetworkRoute';
 
 export default function App() {
     return (
@@ -20,7 +20,7 @@ export default function App() {
                     <Route path='/todos' element={<TodosRoute />} />
                 </Route>
                 <Route path='*' element={<Error404Route />} />
-                <Route path='/disconnect' element={<ErrorConnectionRoute />} />
+                <Route path='/network' element={<ErrorNetworkRoute />} />
             </Routes>
         </Router>
     );

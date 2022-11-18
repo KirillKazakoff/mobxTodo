@@ -35,3 +35,9 @@ export type FilterTypeT = 'all' | 'done' | 'undone';
 
 // OnSubmit
 export type OnSubmitT<T> = (values: T, actions: FormikHelpers<T>) => Promise<void>;
+
+// ErrType
+export type ErrorT = {
+    title: string;
+    desc: string;
+};

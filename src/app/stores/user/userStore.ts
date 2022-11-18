@@ -8,7 +8,6 @@ const preloadedState = loadFromLocalStorage();
 
 class UserStore {
     user = (preloadedState as UserT) || initUser();
-    // user = initUser();
 
     constructor() {
         makeAutoObservable(this);

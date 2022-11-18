@@ -29,10 +29,14 @@ export const request = async (reqObj?: RequestObjT) => {
         const resData = await res.json();
         if (resData.error) throw new Error(resData.error);
         return resData;
-    } catch (e) {
-        if (e.message === 'Failed to fetch') {
-            pageStatusStore.setConnectionLost();
+    } catch ({ message }) {
+        if (message === 'Failed to fetch') {
+            pageStatusStore.setStatus(message);
         }
-        throw new Error(e.message as string);
+        if (message === 'Not Found') {
+            pageStatusStore.setStatus(message);
+        }
+
+        throw new Error(message as string);
     }
 };

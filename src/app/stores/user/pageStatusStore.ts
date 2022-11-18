@@ -1,18 +1,19 @@
 import { makeAutoObservable } from 'mobx';
 
+type ErrorStatusT = 'idle' | 'Not Found' | 'Failed to fetch';
 class PageStatusStore {
-    isConnected = true;
+    status: ErrorStatusT = 'idle';
 
     constructor() {
         makeAutoObservable(this);
     }
 
-    setConnectionLost() {
-        this.isConnected = false;
+    setStatus(status: ErrorStatusT) {
+        this.status = status;
     }
 
     refreshStatus() {
-        this.isConnected = true;
+        this.status = 'idle';
     }
 }
 
