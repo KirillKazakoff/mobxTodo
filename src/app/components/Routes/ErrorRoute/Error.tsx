@@ -8,7 +8,7 @@ export default function Error({ title, desc, children }: Props) {
             <h2 className='error__title'>{title}</h2>
             <div className='error__desc'>{desc}</div>
             <div className='error__pic-container'>
-                <div className='error__pic'>
+                <div className='error__pic error__pic-cache'>
                     <div className='error__loader'>
                         <div className='lds-spinner'>
                             <div />

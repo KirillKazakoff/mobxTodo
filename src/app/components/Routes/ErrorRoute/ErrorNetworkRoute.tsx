@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import ErrorBtn from './ErrorBtn';
@@ -30,9 +30,15 @@ const ErrorConnectionRoute = observer(() => {
         navigate(-1);
     };
 
-    if (status === 'idle') return null;
-    const err = errDictionary[status];
+    useEffect(() => {
+        if (status !== 'idle') return;
+        navigate(-1);
+    }, [status, navigate]);
 
+    const err = errDictionary[status];
+    console.log(err, status);
+
+    if (status === 'idle') return null;
     return (
         <Error title={err.title} desc={err.desc}>
             <ErrorBtn onClick={onClick} desc='Get back' />

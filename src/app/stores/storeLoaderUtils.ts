@@ -1,6 +1,6 @@
-import { UserT } from '../types/types';
+import { UserT, PersonalDataT } from '../types/types';
 
-export const saveToLocalStorage = (state: UserT) => {
+export const saveToLocalStorage = (state: PersonalDataT) => {
     try {
         localStorage.setItem('state', JSON.stringify(state));
         return true;
@@ -12,7 +12,7 @@ export const saveToLocalStorage = (state: UserT) => {
 export const loadFromLocalStorage = () => {
     try {
         const stateStr = localStorage.getItem('state');
-        return stateStr ? JSON.parse(stateStr) : undefined;
+        return stateStr ? (JSON.parse(stateStr) as PersonalDataT) : undefined;
     } catch (e) {
         return undefined;
     }

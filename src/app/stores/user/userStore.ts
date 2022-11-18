@@ -1,17 +1,21 @@
 import { makeAutoObservable } from 'mobx';
 import { loadFromLocalStorage, saveToLocalStorage } from '../storeLoaderUtils';
 import { initUser } from './initUser';
-import { LoginT, PersonalDataT, UserT } from '../../types/types';
+import { LoginT, PersonalDataT } from '../../types/types';
 import { fetchRegister, fetchLogin } from '../../api/api';
 
-const preloadedState = loadFromLocalStorage();
-
 class UserStore {
-    user = (preloadedState as UserT) || initUser();
+    isLoading = false;
+
+    preloadedState = loadFromLocalStorage();
+
+    user = initUser();
 
     constructor() {
+        console.log(this.preloadedState);
         makeAutoObservable(this);
-        window.addEventListener('beforeunload', () => saveToLocalStorage(this.user));
+        window.addEventListener('beforeunload', () => saveToLocalStorage(this.user.personalData));
+        window.addEventListener('visibilitychange', () => this.refetch());
     }
 
     async register(data: PersonalDataT) {
@@ -22,18 +26,23 @@ class UserStore {
     }
 
     async login(data: LoginT) {
-        const { mail, password } = this.loginInfo;
-        if (data.mail === mail && data.password === password) {
+        try {
+            this.isLoading = true;
+            const user = await fetchLogin(data.mail);
+            if (user.personalData.password !== data.password) {
+                throw new Error('Auth Failed');
+            }
+
+            this.user = user;
             return true;
+        } finally {
+            this.isLoading = false;
         }
-        const user = await fetchLogin(data.mail);
+    }
 
-        if (user.personalData.password !== data.password) {
-            throw new Error('Auth Failed');
-        }
-
-        this.user = user;
-        return true;
+    refetch() {
+        if (!this.isLogined) return;
+        this.login(this.loginInfo);
     }
 
     get loginInfo() {
@@ -43,6 +52,14 @@ class UserStore {
 
     get id() {
         return this.user.id;
+    }
+
+    get isPreloaded() {
+        return !!this.preloadedState.mail;
+    }
+
+    get isLogined() {
+        return !!this.loginInfo.mail;
     }
 }
 
