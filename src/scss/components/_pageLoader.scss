@@ -1,29 +1,22 @@
-.page-loader-main {
-    min-height: 100vh;
-    row-gap: 90px;
-}
+.page-loader {
+    &--main {
+        min-height: 100vh;
+        row-gap: 90px;
+    }
+    &__container {
+        @include content-center-column;
+        background-color: #3e3c41;
+    }
+    &__desc {
+        font-size: 24px;
+        width: 100%;
+        display: block;
 
-.page-loader-cost {
-    row-gap: 55px;
-}
+        text-align: center;
 
-.page-loader-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: #3e3c41;
-}
-
-.page-loader-desc {
-    font-size: 24px;
-    width: 100%;
-    display: block;
-
-    text-align: center;
-
-    color: white;
-    text-transform: uppercase;
+        color: white;
+        text-transform: uppercase;
+    }
 }
 
 .animation-area {
