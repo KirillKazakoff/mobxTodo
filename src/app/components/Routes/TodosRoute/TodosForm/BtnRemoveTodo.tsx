@@ -13,6 +13,7 @@ export default function BtnRemoveTodo({ removeCb }: Props) {
             setLoading(false);
         }
     };
+
     if (isLoading) return <SpinLoader cls='sk-chase-btn' />;
     return (
         <button

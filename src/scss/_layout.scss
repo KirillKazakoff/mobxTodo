@@ -204,7 +204,10 @@ body {
         }
     }
     &-remove-todo {
-        width: 40px;
+        width: 30px;
+        @include md {
+            width: 40px;
+        }
     }
     &-agree-todo {
         filter: var(--green-filter);
@@ -255,15 +258,19 @@ body {
         font-weight: 700;
     }
     &-greetings {
-        font-size: 24px;
+        display: none;
         font-weight: 600;
         text-align: center;
-        display: block;
         padding-top: 30px;
         padding-bottom: 30px;
         margin-bottom: auto;
+        font-size: 24px;
+
         @include md {
             font-size: 32px;
+        }
+        @media (min-height: 800px) {
+            display: block;
         }
     }
     &--sm {
@@ -363,15 +370,20 @@ body {
         justify-content: space-between;
         column-gap: 20px;
         text-align: center;
-        font-size: 20px;
 
         background-color: var(--red-lighter);
         padding: 10px;
+    }
+    &__response-desc {
+        @include md {
+            font-size: 20px;
+        }
     }
     // form-todos
     &-todos {
         width: 100%;
         margin-top: auto;
+        padding-top: 15px;
     }
     &-todos__container {
         margin-top: 20px;
@@ -403,6 +415,10 @@ body {
     &-new-todo {
         width: 100%;
         margin-bottom: auto;
+        @media (max-height: 800px) {
+            margin-top: auto;
+            padding-top: 20px;
+        }
     }
     &-new-todo__container {
         min-height: 40vh;
