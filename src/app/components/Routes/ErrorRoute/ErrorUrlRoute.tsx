@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import ErrorBtn from './ErrorBtn';
 import Error from './Error';
 
-export default function Error404Route() {
+export default function ErrorUrlRoute() {
     const navigate = useNavigate();
     const onClick = () => navigate(-1);
 

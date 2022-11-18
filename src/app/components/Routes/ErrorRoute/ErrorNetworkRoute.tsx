@@ -15,6 +15,10 @@ const errDictionary = {
         title: 'Error on server, cant find content',
         desc: 'Please, try to refresh your page...',
     },
+    'Internal Server Error': {
+        title: 'Error on server occurs',
+        desc: 'Please, try to refresh your page...',
+    },
 } as { [key: string]: ErrorT };
 
 const ErrorConnectionRoute = observer(() => {
