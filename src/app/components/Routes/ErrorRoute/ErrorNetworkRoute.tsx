@@ -11,11 +11,11 @@ const errDictionary = {
         title: 'Internet Disconnected!',
         desc: 'Something went wrong, please try to reconnect...',
     },
-    'Not Found': {
+    '404': {
         title: 'Error on server, cant find content',
         desc: 'Please, try to refresh your page...',
     },
-    'Internal Server Error': {
+    '500': {
         title: 'Error on server occurs',
         desc: 'Please, try to refresh your page...',
     },

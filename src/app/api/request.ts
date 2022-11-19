@@ -1,9 +1,9 @@
 import { RequestObjT } from '../types/types';
 import pageStatusStore from '../stores/user/pageStatusStore';
 
-const prodUrl = 'https://todolistserver.onrender.com/users';
-const devUrl = 'http://localhost:9092/users';
-const baseUrl = process.env.NODE_ENV === 'production' ? prodUrl : devUrl;
+const baseUrl = 'https://todolistserver.onrender.com/users';
+// const devUrl = 'http://localhost:9092/users';
+// const baseUrl = process.env.NODE_ENV === 'production' ? prodUrl : devUrl;
 
 export function timeoutMock(timeout: number) {
     return new Promise((resolve) => {
