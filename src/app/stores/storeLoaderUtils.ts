@@ -1,4 +1,4 @@
-import { UserT, PersonalDataT } from '../types/types';
+import { PersonalDataT } from '../types/types';
 
 export const saveToLocalStorage = (state: PersonalDataT) => {
     try {

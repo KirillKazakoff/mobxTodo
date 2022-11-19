@@ -1,6 +1,7 @@
 import { RequestObjT } from '../types/types';
 import pageStatusStore from '../stores/user/pageStatusStore';
 
+// const baseUrl = 'https://todolistserver.onrender.com/users';
 const baseUrl = 'http://localhost:9092/users';
 
 export function timeoutMock(timeout: number) {
@@ -24,19 +25,21 @@ export const request = async (reqObj?: RequestObjT) => {
         await timeoutMock(1000);
 
         const res = await fetch(url, settings);
-        if (!res.ok) throw new Error(res.statusText);
+        if (!res.ok) throw new Error(res.status.toString());
 
         const resData = await res.json();
         if (resData.error) throw new Error(resData.error);
         return resData;
-    } catch ({ message }) {
-        if (message === 'Failed to fetch') {
-            pageStatusStore.setStatus(message);
+    } catch (e) {
+        console.log(e.message);
+
+        if (e.message === 'Failed to fetch') {
+            pageStatusStore.setStatus(e.message);
         }
-        if (message === 'Not Found') {
-            pageStatusStore.setStatus(message);
+        if (e.message === 'Not Found') {
+            pageStatusStore.setStatus(e.message);
         }
 
-        throw new Error(message as string);
+        throw new Error(e.message as string);
     }
 };

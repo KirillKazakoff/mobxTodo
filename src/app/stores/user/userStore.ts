@@ -12,7 +12,6 @@ class UserStore {
     user = initUser();
 
     constructor() {
-        console.log(this.preloadedState);
         makeAutoObservable(this);
         window.addEventListener('beforeunload', () => saveToLocalStorage(this.user.personalData));
         window.addEventListener('visibilitychange', () => this.refetch());
