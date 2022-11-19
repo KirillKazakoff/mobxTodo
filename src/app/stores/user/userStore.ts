@@ -54,7 +54,7 @@ class UserStore {
     }
 
     get isPreloaded() {
-        return !!this.preloadedState.mail;
+        return !!this.preloadedState?.mail;
     }
 
     get isLogined() {
