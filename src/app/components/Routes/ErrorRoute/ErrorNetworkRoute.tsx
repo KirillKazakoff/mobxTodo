@@ -36,7 +36,6 @@ const ErrorConnectionRoute = observer(() => {
     }, [status, navigate]);
 
     const err = errDictionary[status];
-    console.log(err, status);
 
     if (status === 'idle') return null;
     return (

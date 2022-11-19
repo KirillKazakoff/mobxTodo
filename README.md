@@ -1,5 +1,9 @@
 # Тестовое задание - Todo List (React/Mobx)
 
+> ## Ссылка на приложение: [**GitHubPages**][GitHubPages]
+
+<br/>
+
 <h2>Оглавление</h2>
 
 - [Тестовое задание - Todo List (React/Mobx)](#тестовое-задание---todo-list-reactmobx)
@@ -108,3 +112,4 @@ yarn
 <!-- Links in text -->
 
 [этот]:https://github.com/KirillKazakoff/MobxTodosBack
+[GitHubPages]: https://kirillkazakoff.github.io/mobxTodo/

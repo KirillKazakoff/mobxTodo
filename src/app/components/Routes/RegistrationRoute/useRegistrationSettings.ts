@@ -6,18 +6,18 @@ import { OnSubmitT } from '../../../types/types';
 import getErrorsDescription from '../../Common/Form/validation/getErrorsDescription';
 import { checkPatternMail } from '../../Common/Form/validation/utils';
 
-const initialValues = {
-    name: 'username',
-    mail: 'username@mail.com',
-    password: '123',
-    checkPassword: '123',
-};
 // const initialValues = {
-//     name: '',
-//     mail: '',
-//     password: '',
-//     checkPassword: '',
+//     name: 'username',
+//     mail: 'username@mail.com',
+//     password: '123',
+//     checkPassword: '123',
 // };
+const initialValues = {
+    name: '',
+    mail: '',
+    password: '',
+    checkPassword: '',
+};
 type FormValuesT = typeof initialValues;
 
 const validate = (values: FormValuesT) => {
