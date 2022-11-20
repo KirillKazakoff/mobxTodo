@@ -5,7 +5,10 @@ import getErrorsDescription from '../../Common/Form/validation/getErrorsDescript
 import { checkPatternMail } from '../../Common/Form/validation/utils';
 
 export default function useLogingSettings() {
-    const initialValues = userStore.loginInfo;
+    const initialValues = userStore.isLogined
+        ? userStore.loginInfo
+        : userStore.preloadedState;
+
     type FormValuesT = typeof initialValues;
     const navigate = useNavigate();
 
