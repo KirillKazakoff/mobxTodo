@@ -5,7 +5,7 @@ import WelcomeRoute from './components/Routes/WelcomeRoute';
 import RegistrationRoute from './components/Routes/RegistrationRoute/RegistrationRoute';
 import LoginRoute from './components/Routes/LoginRoute/LoginRoute';
 import TodosRoute from './components/Routes/TodosRoute/TodosRoute';
-import MainRoute from './components/Routes/MainRoute';
+import MainRoute from './components/Routes/MainRoute/MainRoute';
 import ErrorNetworkRoute from './components/Routes/ErrorRoute/ErrorNetworkRoute';
 
 export default function App() {

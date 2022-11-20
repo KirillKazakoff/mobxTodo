@@ -14,6 +14,7 @@ class UserStore {
     constructor() {
         makeAutoObservable(this);
         window.addEventListener('unload', () => {
+            if (!this.isLogined) return;
             saveToLocalStorage(this.user.personalData);
         });
         window.addEventListener('visibilitychange', () => this.refetch());

@@ -1,9 +1,12 @@
 // commons
-body {
+.body {
     background-color: var(--body-color);
     font-family: 'Jura';
     color: var(--black);
     font-weight: 300;
+    &--todos {
+        background-color: var(--black);
+    }
 }
 
 .framed {
