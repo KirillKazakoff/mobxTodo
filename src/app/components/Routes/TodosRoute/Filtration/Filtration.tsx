@@ -7,9 +7,9 @@ export default function Filtration() {
     const onClick = () => setActive(!isActive);
 
     return (
-        <div className='filtration'>
+        <div className='filtration' onBlur={onClick}>
             <span className='filtration__desc'>Filter by:</span>
-            <div className='filtration__select'>
+            <button className='filtration__select' type='button'>
                 <li
                     onClick={onClick}
                     className='filtration__option filtration__option--selected'
@@ -17,7 +17,7 @@ export default function Filtration() {
                     {filterStore.status}
                 </li>
                 <FiltrationOptions setActiveHandler={onClick} isActive={isActive} />
-            </div>
+            </button>
         </div>
     );
 }
