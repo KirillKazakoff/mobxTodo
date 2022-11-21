@@ -7,9 +7,12 @@ export default function Filtration() {
     const onClick = () => setActive(!isActive);
 
     return (
-        <div className='filtration' onBlur={onClick}>
+        <div className='filtration'>
             <span className='filtration__desc'>Filter by:</span>
-            <button className='filtration__select' type='button'>
+            <button
+                className='filtration__select' type='button'
+                onBlur={onClick}
+            >
                 <li
                     onClick={onClick}
                     className='filtration__option filtration__option--selected'
